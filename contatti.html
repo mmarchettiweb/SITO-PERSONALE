@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatti | MMarchetti — Marco Marchetti</title>
+  <meta name="description" content="Contatta Marco Marchetti per consulenza digitale, formazione o progetti nelle scuole. Scrivi una mail o compila il form.">
+  <meta name="author" content="Marco Marchetti">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mmarchetti.web/contatti.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contatti | MMarchetti — Marco Marchetti">
+  <meta property="og:description" content="Contatta Marco Marchetti per consulenza digitale, formazione o progetti nelle scuole. Scrivi una mail o compila il form.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mmarchetti.web/contatti.html">
+  <meta property="og:image" content="https://mmarchetti.web/assets/images/logo_mmarchetti.png">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="MMarchetti">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contatti | MMarchetti — Marco Marchetti">
+  <meta name="twitter:description" content="Contatta Marco Marchetti per consulenza digitale, formazione o progetti nelle scuole.">
+  <meta name="twitter:image" content="https://mmarchetti.web/assets/images/logo_mmarchetti.png">
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar" aria-label="Navigazione principale">
+      <div class="container">
+        <a href="index.html" class="navbar-logo" aria-label="MMarchetti — torna alla home">
+          <img src="assets/images/logo_mmarchetti.png" alt="MMarchetti logo" width="120" height="40">
+        </a>
+        <button class="navbar-hamburger" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="main-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="navbar-nav" id="main-nav" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="chi-sono.html">Chi sono</a></li>
+          <li><a href="consulenza.html">Consulenza</a></li>
+          <li><a href="formazione.html">Formazione</a></li>
+          <li><a href="scuola-futuro.html">Scuola &amp; Futuro</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero pagina -->
+    <section class="page-hero section-dark" aria-labelledby="page-title">
+      <div class="container">
+        <span class="hero-label">Contatti</span>
+        <h1 id="page-title">Parliamo.</h1>
+        <p class="hero-subtitle">Non serve un brief perfetto. Basta un'idea, un problema da risolvere, una curiosità. Scrivimi — troveremo il modo giusto per lavorare insieme.</p>
+      </div>
+    </section>
+
+    <!-- Form + Contatti -->
+    <section class="section-dark" aria-labelledby="contatti-title">
+      <div class="container">
+        <div class="contatti-layout">
+
+          <!-- Form -->
+          <div class="fade-in">
+            <h2 id="contatti-title" class="visually-hidden">Form di contatto</h2>
+            <!-- FORMSPREE: sostituisci XXXXXXXX con il tuo endpoint ID da formspree.io/f/XXXXXXXX -->
+            <form
+              action="https://formspree.io/f/XXXXXXXX"
+              method="POST"
+              aria-label="Form di contatto"
+            >
+              <input type="hidden" name="_subject" value="Nuovo contatto da mmarchetti.web">
+              <input type="hidden" name="_language" value="it">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="nome">Nome <span aria-hidden="true">*</span></label>
+                  <input
+                    type="text"
+                    id="nome"
+                    name="Nome"
+                    placeholder="Mario"
+                    required
+                    autocomplete="given-name"
+                    aria-required="true"
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="cognome">Cognome <span aria-hidden="true">*</span></label>
+                  <input
+                    type="text"
+                    id="cognome"
+                    name="Cognome"
+                    placeholder="Rossi"
+                    required
+                    autocomplete="family-name"
+                    aria-required="true"
+                  >
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email <span aria-hidden="true">*</span></label>
+                <input
+                  type="email"
+                  id="email"
+                  name="Email"
+                  placeholder="mario.rossi@email.com"
+                  required
+                  autocomplete="email"
+                  aria-required="true"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="tipo-richiesta">Tipo di richiesta <span aria-hidden="true">*</span></label>
+                <select
+                  id="tipo-richiesta"
+                  name="Tipo di richiesta"
+                  required
+                  aria-required="true"
+                >
+                  <option value="" disabled selected>Seleziona un'opzione</option>
+                  <option value="Consulenza aziendale">Consulenza aziendale</option>
+                  <option value="Formazione">Formazione</option>
+                  <option value="Progetto scolastico">Progetto scolastico</option>
+                  <option value="Altro">Altro</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="messaggio">Messaggio <span aria-hidden="true">*</span></label>
+                <textarea
+                  id="messaggio"
+                  name="Messaggio"
+                  placeholder="Raccontami la tua situazione o quello che hai in mente..."
+                  required
+                  aria-required="true"
+                  rows="6"
+                ></textarea>
+              </div>
+
+              <!-- GDPR Consenso -->
+              <div class="form-group form-gdpr">
+                <label class="gdpr-label" for="gdpr-consenso">
+                  <input
+                    type="checkbox"
+                    id="gdpr-consenso"
+                    name="Consenso GDPR"
+                    value="Acconsentito"
+                    required
+                    aria-required="true"
+                  >
+                  <span class="gdpr-text">
+                    Ho letto e accetto l'<a href="privacy.html" target="_blank">informativa sulla privacy</a>. Acconsento al trattamento dei miei dati personali ai sensi del GDPR (Reg. UE 2016/679) per la gestione della richiesta di contatto. <span class="gdpr-required" aria-hidden="true">*</span>
+                  </span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary form-submit" aria-label="Invia il messaggio a Marco Marchetti">
+                Invia messaggio
+              </button>
+            </form>
+          </div>
+
+          <!-- Contatti diretti -->
+          <aside class="contatti-diretti fade-in" aria-label="Contatti diretti">
+            <h2 class="mb-md" style="font-size: 22px;">Contatti diretti.</h2>
+
+            <div class="contatto-item">
+              <div class="contatto-icon" aria-hidden="true">
+                <!-- Email icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div>
+                <span class="contatto-label">Email</span>
+                <a href="mailto:mmarchetti.web@gmail.com" class="contatto-value" aria-label="Scrivi una email a Marco Marchetti">mmarchetti.web@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contatto-item">
+              <div class="contatto-icon" aria-hidden="true">
+                <!-- Phone icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div>
+                <span class="contatto-label">Telefono</span>
+                <a href="tel:+393426951496" class="contatto-value" aria-label="Chiama Marco Marchetti">+39 342 695 1496</a>
+              </div>
+            </div>
+
+            <div class="contatto-item">
+              <div class="contatto-icon" aria-hidden="true">
+                <!-- LinkedIn icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </div>
+              <div>
+                <span class="contatto-label">LinkedIn</span>
+                <a
+                  href="https://www.linkedin.com/in/marco-marchetti-a929b1320"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contatto-value"
+                  aria-label="Profilo LinkedIn di Marco Marchetti"
+                >marco-marchetti</a>
+              </div>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" aria-label="MMarchetti — torna alla home">
+            <img src="assets/images/logo_mmarchetti.png" alt="MMarchetti logo" width="100" height="34" loading="lazy">
+          </a>
+          <p class="mt-md">Consulente e Formatore Digitale.<br>Trasformo la complessità digitale in soluzioni comprensibili e implementabili.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Navigazione footer">
+          <h4>Pagine</h4>
+          <ul role="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="chi-sono.html">Chi sono</a></li>
+            <li><a href="consulenza.html">Consulenza</a></li>
+            <li><a href="formazione.html">Formazione</a></li>
+            <li><a href="scuola-futuro.html">Scuola &amp; Futuro</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+          </ul>
+        </nav>
+        <div class="footer-contatti">
+          <h4>Contatti</h4>
+          <a href="mailto:mmarchetti.web@gmail.com" aria-label="Scrivi una email a Marco Marchetti">mmarchetti.web@gmail.com</a>
+          <a href="tel:+393426951496" aria-label="Chiama Marco Marchetti">+39 342 695 1496</a>
+          <a href="https://www.linkedin.com/in/marco-marchetti-a929b1320" target="_blank" rel="noopener noreferrer" aria-label="Profilo LinkedIn di Marco Marchetti">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="copyright-year">2026</span> Marco Marchetti — MMarchetti</p>
+        <p>P.IVA 02900680303</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

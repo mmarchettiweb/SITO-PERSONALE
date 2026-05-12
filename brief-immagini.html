@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Brief Immagini — MMarchetti Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11pt;
+      line-height: 1.65;
+      color: #E0E0E0;
+      background: #0A0A0A;
+    }
+
+    @page {
+      size: A4;
+      margin: 2cm 2cm 2.5cm 2cm;
+      @bottom-center {
+        content: counter(page);
+        font-size: 9pt;
+        color: #4A4A4A;
+      }
+    }
+    @page :first { margin: 0; @bottom-center { content: none; } }
+    @page cover { @bottom-center { content: none; } }
+
+    .cover {
+      page: cover;
+      width: 210mm;
+      height: 297mm;
+      margin: 0;
+      position: relative;
+      overflow: hidden;
+      background: #0A0A0A;
+      page-break-after: always;
+    }
+
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(26, 127, 212, 0.15) 0%, transparent 70%);
+    }
+    .cover::after {
+      content: '';
+      position: absolute;
+      bottom: -10%;
+      left: -5%;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(245, 166, 35, 0.08) 0%, transparent 70%);
+    }
+
+    .cover-accent-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #1A7FD4, #7B1FA2, #E8357A, #F5A623);
+    }
+
+    .cover-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      width: 80%;
+      z-index: 1;
+    }
+
+    .cover-label {
+      font-size: 10pt;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #F5A623;
+      margin-bottom: 24px;
+    }
+
+    .cover h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 36pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .cover-subtitle {
+      font-size: 13pt;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 48px;
+    }
+
+    .cover-meta {
+      font-size: 10pt;
+      color: rgba(255, 255, 255, 0.4);
+      line-height: 2;
+    }
+
+    .cover-bottom-line {
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: #1A7FD4;
+      border-radius: 2px;
+    }
+
+    /* Content pages */
+    .content {
+      padding-top: 0;
+    }
+
+    h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      margin-top: 0;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #1A7FD4;
+      page-break-after: avoid;
+    }
+
+    h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #1A7FD4;
+      margin-top: 24px;
+      margin-bottom: 8px;
+      page-break-after: avoid;
+    }
+
+    h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11pt;
+      font-weight: 500;
+      color: #F5A623;
+      margin-top: 16px;
+      margin-bottom: 6px;
+    }
+
+    p {
+      margin-bottom: 10px;
+      color: #CCCCCC;
+    }
+
+    .intro {
+      font-size: 11.5pt;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 24px;
+      padding: 16px;
+      background: rgba(26, 127, 212, 0.06);
+      border-left: 3px solid #1A7FD4;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .img-card {
+      margin-bottom: 20px;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid #1E1E1E;
+      border-radius: 8px;
+      page-break-inside: avoid;
+    }
+
+    .img-card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .img-number {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18pt;
+      font-weight: 700;
+      color: #1A7FD4;
+      width: 32px;
+      height: 32px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(26, 127, 212, 0.15);
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .img-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #FFFFFF;
+    }
+
+    .img-meta {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .img-meta-item {
+      font-size: 9pt;
+      padding: 3px 10px;
+      border-radius: 12px;
+      background: rgba(245, 166, 35, 0.1);
+      color: #F5A623;
+      border: 1px solid rgba(245, 166, 35, 0.3);
+    }
+
+    .img-meta-item.format {
+      background: rgba(26, 127, 212, 0.1);
+      color: #1A7FD4;
+      border-color: rgba(26, 127, 212, 0.3);
+    }
+
+    .img-desc {
+      font-size: 10.5pt;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.6;
+    }
+
+    .img-desc strong {
+      color: #FFFFFF;
+      font-weight: 500;
+    }
+
+    .img-list {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0 0;
+    }
+
+    .img-list li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 4px;
+      font-size: 10pt;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .img-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #1A7FD4;
+    }
+
+    .gradient-line {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #1A7FD4, #7B1FA2, transparent);
+      opacity: 0.4;
+      margin: 24px 0;
+    }
+
+    .note-box {
+      margin-top: 24px;
+      padding: 14px;
+      background: rgba(232, 53, 122, 0.06);
+      border: 1px solid rgba(232, 53, 122, 0.2);
+      border-radius: 8px;
+    }
+
+    .note-box h4 {
+      color: #E8357A;
+      margin-top: 0;
+    }
+
+    .note-box p {
+      font-size: 10pt;
+      color: rgba(255, 255, 255, 0.65);
+      margin-bottom: 0;
+    }
+
+    .page-break {
+      page-break-after: always;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cover -->
+  <div class="cover">
+    <div class="cover-accent-line"></div>
+    <div class="cover-content">
+      <div class="cover-label">MMarchetti Website</div>
+      <h1>Brief Immagini</h1>
+      <p class="cover-subtitle">Guida per la selezione e creazione delle immagini del sito</p>
+      <div class="cover-meta">
+        <p>Marco Marchetti — Consulente e Formatore Digitale</p>
+        <p>mmarchetti.web</p>
+      </div>
+    </div>
+    <div class="cover-bottom-line"></div>
+  </div>
+
+  <!-- Intro -->
+  <div class="content">
+    <h2>Introduzione</h2>
+    <div class="intro">
+      Questo documento raccoglie tutte le indicazioni per le immagini necessarie al nuovo sito MMarchetti. Per ogni immagine trovi: la pagina di destinazione, il formato consigliato, una descrizione dettagliata del contenuto e lo stile visivo da seguire.
+    </div>
+
+    <h3>Stile visivo generale</h3>
+    <p>Tutte le immagini devono rispettare un'estetica coerente:</p>
+    <ul class="img-list">
+      <li><strong>Tono:</strong> professionale ma umano, non corporate freddo</li>
+      <li><strong>Colori:</strong> preferire toni scuri con accenti blu (#1A7FD4) e arancio (#F5A623)</li>
+      <li><strong>Luci:</strong> illuminazione naturale o soffusa, evitare flash diretti</li>
+      <li><strong>Ambienti:</strong> spazi moderni ma reali — uffici, aule, luoghi di lavoro concreti</li>
+      <li><strong>Persone:</strong> espressioni naturali, nessuna posa troppo studiata</li>
+      <li><strong>NO:</strong> stock photo generiche, persone con auricolari da call center, sfondi bianchi infiniti</li>
+    </ul>
+
+    <div class="gradient-line"></div>
+
+    <!-- HOME -->
+    <h2>Homepage</h2>
+
+    <div class="img-card">
+      <div class="img-card-header">
+        <span class="img-number">1</span>
+        <span class="img-title">Hero Background</span>
+      </div>
+      <div class="img-meta">
+        <span class="img-meta-item format">16:9 — Landscape</span>
+        <span class="img-meta-item">Homepage — Hero Section</span>
+      </div>
+      <div class="img-desc">
+        <strong>Cos'è:</strong> L'immagine principale della homepage, visibile in background dietro il testo hero.<br>
+        <strong>Cosa deve raffigurare:</strong> Un ambiente di lavoro moderno e tecnologico ma umano — una scrivania con monitor, tastiera, elementi digitali (codice, interfacce, grafici) visibili sugli schermi. Luce soffusa, atmosfera concentrata. Può essere una foto reale o un'illustrazione astratta con forme geometriche e gradienti blu/arancio.<br>
+        <strong>Stile:</strong> Tonalità scure con accenti luminosi blu e arancio. Se foto: depth of field, bokeh leggero. Se illustrazione: linee pulite, forme astratte che evocano connessione digitale.
+      </div>
+    </div>
+
+    <div class="img-card">
+      <div class="img-card-header">
+        <span class="img-number">2</span>
+        <span class="img-title">Foto Profilo — Marco</span>
+      </div>
+      <div class="img-meta">
+        <span class="img-meta-item format">1:1 — Quadrato</span>
+        <span class="img-meta-item">Homepage + Chi Sono</span>
+      </div>
+      <div class="img-desc">
+        <strong>Cos'è:</strong> La foto professionale di Marco Marchetti, usata nella sezione "Chi sono" sintesi e nella pagina dedicata.<br>
+        <strong>Cosa deve raffigurare:</strong> Ritratto professionale di Marco — mezzo busto o busto, sorridente ma naturale, guardando verso l'obbiettivo o leggermente di lato. Vestito smart-casual (camicia o maglione). Sfondo scuro o sfocato urbano.<br>
+        <strong>Stile:</strong> Illuminazione professionale ma non troppo da studio. Sfondo scuro (#0A0A0A o simile) per integrarsi con il sito. Espressione aperta e competente.
+      </div>
+    </div>
+
+    <!-- CONSULENZA -->
+    <h2>Pagina Consulenza</h2>
+
+    <div class="img-card">
+      <div class="img-card-header">
+        <span class="img-number">3</span>
+        <span class="img-title">Team in riunione digitale</span>
+      </div>
+      <div class="img-meta">
+        <span class="img-meta-item format">16:9 — Landscape</span>
+        <span class="img-meta-item">Consulenza — Sezione PMI</span>
+      </div>
+      <div class="img-desc">
+        <strong>Cos'è:</strong> Immagine per la sezione "Le PMI italiane corrono il rischio di restare indietro".<br>
+        <strong>Cosa deve raffigurare:</strong> Un team aziendale (4-6 persone) in un ambiente di lavoro moderno che collabora attivamente. Alcuni al computer, altri in piedi a discutere vicino a una lavagna o monitor condiviso. Atmosfera produttiva ma rilassata. Ambiente reale — non ufficio troppo "da catalogo".<br>
+        <strong>Stile:</strong> Luce naturale da finestre grandi. Colori neutri con accenti di colore negli oggetti (post-it, schermi). Preferire foto autentica a stock troppo perfetta.
+      </div>
+    </div>
+
+    <div class="img-card">
+      <div class="img-card-header">
+        <span class="img-number">4</span>
+        <span class="img-title">Dashboard e strumenti digitali</span>
+      </div>
+      <div class="img-meta">
+        <span class="img-meta-item format">3:4 — Portrait</span>
+        <span class="img-meta-item">Consulenza — Sezione Focus</span>
+      </div>
+      <div class="img-desc">
+        <strong>Cos'è:</strong> Immagine per la sezione "Non vendo tecnologia. Risolvo problemi".<br>
+        <strong>Cosa deve raffigurare:</strong> Un monitor o laptop che mostra una dashboard pulita — grafici, dati, interfacce di strumenti aziendali (CRM, automazioni, analytics). La schermata deve apparire professionale e ordinata. Può includere mani che digitano o un mouse.<br>
+        <strong>Stile:</strong> Tonalità scure con elementi UI blu. Interfaccia moderna e pulita. Se possibile, mockup con contesto reale (scrivania, ambiente) non screenshot isolato.
+      </div>
+    </div>
+
+    <!-- FORMAZIONE -->
+    <h2>Pagina Formazione</h2>
+
+    <div class="img-card">
+      <div class="img-card-header">
+        <span class="img-number">5</span>
+        <span class="img-title">Aula formazione / Workshop</span>
+      </div>
+      <div class="img-meta">
+        <span class="img-meta-item format">16:9 — Landscape</span>
+        <span class="img-meta-item">Formazione — Sezione Formati</span>
+      </div>
+      <div class="img-desc">
+        <strong>Cos'è:</strong> Immagine per la sezione "Formati flessibili".<br>
+        <strong>Cosa deve raffigurare:</strong> Una sessione formativa in corso — un formatore (può essere Marco o un placeholder) davanti a un gruppo di partecipanti con laptop. Schermo proiettore visibile con slide o codice. Ambiente aula o sala riunioni aziendale.<br>
+        <strong>Stile:</strong> Partecipanti concentrati e attivi — nessuno che dorme o guarda il telefono. Luce ambiente soffusa. Se possibile, scatto dal fondo dell'aula che mostra sia il formatore che i partecipanti.
+      </div>
+    </div>
+
+    <!-- CHI SONO -->
+    <h2>Pagina Chi Sono</h2>
+
+    <div class="img-card">
+      <div class="img-card-header">
+        <span class="img-number">6</span>
+        <span class="img-title">Foto storytelling — Marco al lavoro</span>
+      </div>
+      <div class="img-meta">
+        <span class="img-meta-item format">16:9 — Landscape</span>
+        <span class="img-meta-item">Chi Sono — Sezione Bio</span>
+      </div>
+      <div class="img-desc">
+        <strong>Cos'è:</strong> Immagine contestuale per la pagina biografica.<br>
+        <strong>Cosa deve raffigurare:</strong> Marco mentre lavora — alla scrivania con più monitor, in un'aula durante una formazione, o in riunione con un cliente. Deve raccontare "lavoro sul campo", non solo ritratto. Mostra competenza e approccio pratico.<br>
+        <strong>Stile:</strong> Foto reportage, naturale. No pose da studio. Ambiente reale con dettagli che raccontano il lavoro (schermi, quaderni, strumenti digitali).
+      </div>
+    </div>
+
+    <!-- SCUOLA -->
+    <h2>Pagina Scuola & Futuro</h2>
+
+    <div class="img-card">
+      <div class="img-card-header">
+        <span class="img-number">7</span>
+        <span class="img-title">Ragazzi e tecnologia educativa</span>
+      </div>
+      <div class="img-meta">
+        <span class="img-meta-item format">16:9 — Landscape</span>
+        <span class="img-meta-item">Scuola — Hero o sezione temi</span>
+      </div>
+      <div class="img-desc">
+        <strong>Cos'è:</strong> Immagine per la pagina dedicata al progetto scolastico.<br>
+        <strong>Cosa deve raffigurare:</strong> Studenti delle superiori (15-18 anni) che interagiscono con la tecnologia in modo consapevole — in laboratorio informatico, con laptop o tablet, in gruppi che collaborano. Espressioni curiose e attente, non passive.<br>
+        <strong>Stile:</strong> Luce naturale, aula luminosa. Evitare stereotipi: ragazzi e ragazze misti, diversità. Atmosfera di scoperta e apprendimento attivo. NO foto di bambini troppo piccoli.
+      </div>
+    </div>
+
+    <div class="gradient-line"></div>
+
+    <!-- Note tecniche -->
+    <h2>Note tecniche</h2>
+
+    <div class="note-box">
+      <h4>Formati e dimensioni</h4>
+      <p>Tutte le immagini devono essere in formato <strong>JPEG alta qualità</strong> (80-90%) o <strong>PNG</strong> se con trasparenza. Risoluzione minima: <strong>1920px sul lato lungo</strong> per le immagini hero, <strong>1200px</strong> per le altre. Ottimizzare per il web (compressione senza perdita visibile).</p>
+    </div>
+
+    <div class="note-box" style="margin-top: 12px;">
+      <h4>Diritti d'uso</h4>
+      <p>Se si usano foto di persone reali (clienti, team, studenti), assicurarsi di avere il <strong>consenso all'uso</strong> per scopi commerciali sul sito web. Per foto stock, usare solo licenze che permettano uso commerciale senza attribuzione.</p>
+    </div>
+
+    <div class="note-box" style="margin-top: 12px;">
+      <h4>Alternative all'fotografia</h4>
+      <p>Per le sezioni in cui una foto non è disponibile, è possibile usare <strong>illustrazioni astratte</strong> in stile consistente con il brand (toni scuri, accenti blu/arancio, forme geometriche) o <strong>pattern SVG</strong> generati via codice. Il sito ha già elementi decorativi CSS che possono coprire l'assenza di immagini.</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
