@@ -1635,16 +1635,22 @@ footer {
    ===================== */
 
 .scuola-apertura {
-  font-size: clamp(18px, 2.5vw, 21px);
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-titoli);
+  font-size: clamp(20px, 2.5vw, 24px);
+  line-height: 1.5;
+  color: #FFFFFF;
   padding: var(--space-lg) var(--space-lg);
   border-left: 4px solid var(--arancio);
   background-color: var(--arancio-soft);
   border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
   position: relative;
   z-index: 1;
+}
+
+.scuola-missione {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
 }
 
 .scuola-missione p {
@@ -1966,4 +1972,173 @@ footer {
 /* Padding top compensazione navbar per link ancorati */
 html {
   scroll-padding-top: var(--navbar-h);
+}
+
+/* =====================
+   UTILITY MARGINS EXTRA
+   ===================== */
+.mt-sm  { margin-top: var(--space-sm); }
+.mt-xl  { margin-top: var(--space-xl); }
+.mb-xl  { margin-bottom: var(--space-xl); }
+
+/* =====================
+   STAT CARDS (HOME)
+   ===================== */
+.stat-card {
+  padding: 32px;
+  border-radius: 8px;
+  text-align: center;
+}
+.stat-card--blu {
+  border: 1px solid rgba(26, 127, 212, 0.3);
+  background: rgba(26, 127, 212, 0.04);
+}
+.stat-card--arancio {
+  border: 1px solid rgba(245, 166, 35, 0.3);
+  background: rgba(245, 166, 35, 0.04);
+}
+.stat-number--hero {
+  font-family: var(--font-titoli);
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1;
+}
+.stat-label--small {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 8px;
+}
+
+/* =====================
+   STEP NUMBER VARIANTI
+   ===================== */
+.step-number--blu     { color: var(--blu); }
+.step-number--viola   { color: var(--viola); }
+.step-number--magenta { color: var(--magenta); }
+.step-number--arancio { color: var(--arancio); }
+.step-number--faded   { color: rgba(255, 255, 255, 0.4); }
+
+/* =====================
+   BENEFIT LIST (CONSULENZA)
+   ===================== */
+.benefit-list {
+  list-style: none;
+  margin-top: var(--space-sm);
+}
+.benefit-list__item {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--grigio-bordo);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.75);
+}
+.benefit-list__item:last-child {
+  border-bottom: none;
+}
+.benefit-list__icon {
+  color: var(--blu);
+  margin-right: 8px;
+}
+
+/* =====================
+   CONTENUTO CENTRATO
+   ===================== */
+.content-centered {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.content-centered--text-center {
+  text-align: center;
+}
+
+/* =====================
+   QUOTE / MANIFESTO
+   ===================== */
+.quote-large {
+  font-size: clamp(20px, 3vw, 26px);
+  line-height: 1.5;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.85);
+}
+.quote-attr {
+  margin-top: var(--space-md);
+  color: var(--arancio);
+  font-size: var(--small-size);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* =====================
+   AREE TEMATICHE (FORMAZIONE)
+   ===================== */
+.area-heading {
+  font-size: clamp(24px, 3vw, 32px);
+  margin-bottom: var(--space-md);
+}
+.area-list {
+  margin-top: var(--space-md);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  list-style: disc;
+  padding-left: var(--space-md);
+}
+
+/* =====================
+   TESTO UTILITÀ
+   ===================== */
+.text-muted {
+  color: rgba(255, 255, 255, 0.75);
+}
+.note-blu {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: var(--small-size);
+  border-left: 3px solid var(--blu);
+  padding-left: var(--space-md);
+}
+
+/* =====================
+   PRIVACY PAGE
+   ===================== */
+.privacy-content {
+  max-width: 800px;
+}
+.privacy-heading {
+  font-size: clamp(20px, 3vw, 28px);
+  margin-bottom: 24px;
+}
+.privacy-para {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 40px;
+}
+.privacy-para--sm {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 16px;
+}
+.privacy-list {
+  color: rgba(255, 255, 255, 0.75);
+  padding-left: 24px;
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+/* =====================
+   CONTATTI PAGE
+   ===================== */
+.contatti-heading {
+  font-size: 22px;
+}
+
+/* =====================
+   SCUOLA — SVG ILLUSTRAZIONE
+   ===================== */
+.image-placeholder--clean {
+  border: none;
+  padding: 0;
+}
+.image-placeholder--clean svg {
+  background: linear-gradient(135deg, #0A0A0A 0%, #151515 100%);
+  border-radius: 8px;
 }

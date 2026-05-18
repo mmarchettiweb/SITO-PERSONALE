@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /_work/
+
+Sitemap: https://mmarchetti.it/sitemap.xml
