@@ -1,0 +1,120 @@
+/* Stili pagina Scuola & Futuro — MMarchetti */
+
+/* =====================
+   SEZIONE TEMI
+   ===================== */
+
+.temi-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .temi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .temi-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.tema-item {
+  padding: var(--space-md);
+  border-left: 3px solid var(--arancio);
+  background-color: var(--arancio-soft);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.tema-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 16px rgba(245, 166, 35, 0.1);
+}
+
+.tema-item h3 {
+  font-size: 18px;
+  margin-bottom: var(--space-xs);
+  color: var(--bianco);
+}
+
+.tema-item p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+}
+
+/* =====================
+   APERTURA E MISSIONE
+   ===================== */
+
+.scuola-apertura {
+  font-family: var(--font-titoli);
+  font-size: clamp(20px, 2.5vw, 24px);
+  line-height: 1.5;
+  color: #FFFFFF;
+  padding: var(--space-lg) var(--space-lg);
+  border-left: 4px solid var(--arancio);
+  background-color: var(--arancio-soft);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  margin-bottom: var(--space-md);
+  position: relative;
+  z-index: 1;
+}
+
+.scuola-missione {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+}
+
+.scuola-missione p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: var(--space-md);
+}
+
+/* =====================
+   PER CHI
+   ===================== */
+
+.scuola-per-chi {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  position: relative;
+  z-index: 1;
+}
+
+.per-chi-item {
+  padding: var(--space-sm) var(--space-md);
+  border-left: 3px solid var(--blu);
+  background-color: rgba(26, 127, 212, 0.05);
+  transition: transform var(--transition);
+}
+
+.per-chi-item:hover {
+  transform: translateX(4px);
+}
+
+.per-chi-item p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* =====================
+   SVG ILLUSTRAZIONE
+   ===================== */
+
+.image-placeholder--clean {
+  border: none;
+  padding: 0;
+  aspect-ratio: 16 / 9;
+}
+
+.image-placeholder--clean svg {
+  background: linear-gradient(135deg, #0A0A0A 0%, #151515 100%);
+  border-radius: 8px;
+}

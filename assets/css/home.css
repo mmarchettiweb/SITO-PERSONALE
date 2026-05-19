@@ -1,0 +1,36 @@
+/* Stili pagina Home — MMarchetti */
+
+/* =====================
+   STAT CARDS
+   ===================== */
+
+.stat-card {
+  padding: 32px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.stat-card--blu {
+  border: 1px solid rgba(26, 127, 212, 0.3);
+  background: rgba(26, 127, 212, 0.04);
+}
+
+.stat-card--arancio {
+  border: 1px solid rgba(245, 166, 35, 0.3);
+  background: rgba(245, 166, 35, 0.04);
+}
+
+.stat-number--hero {
+  font-family: var(--font-titoli);
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stat-label--small {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 8px;
+}

@@ -1,0 +1,60 @@
+/* Stili pagina Chi sono — MMarchetti */
+
+/* =====================
+   LISTA COMPETENZE
+   ===================== */
+
+.skills-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .skills-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.skill-tag {
+  padding: 10px 16px;
+  border: 1px solid rgba(26, 127, 212, 0.4);
+  border-radius: var(--radius);
+  font-size: var(--small-size);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  background-color: rgba(26, 127, 212, 0.05);
+  transition: border-color var(--transition), background-color var(--transition);
+}
+
+.skill-tag:hover {
+  border-color: var(--blu);
+  background-color: rgba(26, 127, 212, 0.1);
+}
+
+/* =====================
+   BIO
+   ===================== */
+
+.bio-intro {
+  font-size: clamp(18px, 2.5vw, 22px);
+  font-weight: 500;
+  color: var(--bianco);
+  line-height: 1.5;
+  margin-bottom: var(--space-lg);
+  padding-left: var(--space-md);
+  border-left: 4px solid var(--arancio);
+}
+
+.bio-paragraphs p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: var(--space-md);
+}
+
+.bio-paragraphs p:last-child {
+  margin-bottom: 0;
+}

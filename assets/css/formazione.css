@@ -1,0 +1,199 @@
+/* Stili pagina Formazione — MMarchetti */
+
+/* =====================
+   BADGE / PILL COLORATE
+   ===================== */
+
+.badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: var(--caption-size);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.badge-blu {
+  background: rgba(26, 127, 212, 0.15);
+  color: var(--blu);
+  border: 1px solid rgba(26, 127, 212, 0.3);
+}
+
+.badge-arancio {
+  background: rgba(245, 166, 35, 0.15);
+  color: var(--arancio);
+  border: 1px solid rgba(245, 166, 35, 0.3);
+}
+
+.badge-magenta {
+  background: rgba(232, 53, 122, 0.15);
+  color: var(--magenta);
+  border: 1px solid rgba(232, 53, 122, 0.3);
+}
+
+.badge-viola {
+  background: rgba(123, 31, 162, 0.15);
+  color: var(--viola);
+  border: 1px solid rgba(123, 31, 162, 0.3);
+}
+
+/* =====================
+   QUOTE / MANIFESTO
+   ===================== */
+
+.quote-large {
+  font-size: clamp(20px, 3vw, 26px);
+  line-height: 1.5;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.quote-attr {
+  margin-top: var(--space-md);
+  color: var(--arancio);
+  font-size: var(--small-size);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* =====================
+   AREE TEMATICHE
+   ===================== */
+
+.area-heading {
+  font-size: clamp(24px, 3vw, 32px);
+  margin-bottom: var(--space-md);
+}
+
+.area-list {
+  margin-top: var(--space-md);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  list-style: disc;
+  padding-left: var(--space-md);
+}
+
+/* =====================
+   CORSO CARD (per sviluppi futuri)
+   ===================== */
+
+.corso-card {
+  padding: var(--space-lg);
+  border: 1px solid var(--grigio-bordo);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.corso-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--gradient-accent);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.corso-card:hover {
+  border-color: var(--blu);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.corso-card:hover::before {
+  opacity: 1;
+}
+
+.corso-header {
+  margin-bottom: var(--space-md);
+}
+
+.corso-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: var(--caption-size);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+
+.corso-tag.blu {
+  background: rgba(26, 127, 212, 0.15);
+  color: var(--blu);
+  border: 1px solid rgba(26, 127, 212, 0.3);
+}
+
+.corso-tag.arancio {
+  background: rgba(245, 166, 35, 0.15);
+  color: var(--arancio);
+  border: 1px solid rgba(245, 166, 35, 0.3);
+}
+
+.corso-tag.magenta {
+  background: rgba(232, 53, 122, 0.15);
+  color: var(--magenta);
+  border: 1px solid rgba(232, 53, 122, 0.3);
+}
+
+.corso-tag.viola {
+  background: rgba(123, 31, 162, 0.15);
+  color: var(--viola);
+  border: 1px solid rgba(123, 31, 162, 0.3);
+}
+
+.corso-card h3 {
+  font-size: 22px;
+  margin-bottom: var(--space-xs);
+}
+
+.corso-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  font-size: var(--small-size);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.corso-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.corso-content p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  margin-bottom: var(--space-sm);
+}
+
+.corso-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.corso-content ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: var(--space-xs);
+  font-size: var(--small-size);
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.corso-content ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--blu);
+}

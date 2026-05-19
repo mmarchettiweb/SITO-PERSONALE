@@ -18,18 +18,32 @@ mmarchetti-new/
 ├── favicon.svg
 ├── assets/
 │   ├── css/
-│   │   ├── reset.css       # Reset CSS
-│   │   ├── variables.css   # Variabili CSS (colori, font, spaziature)
-│   │   └── main.css        # Stili principali (~2100 righe)
+│   │   ├── reset.css               # Reset CSS
+│   │   ├── variables.css           # Variabili CSS (colori, font, spaziature)
+│   │   ├── main.css                # Stili globali, navbar, footer, componenti condivisi (~1420 righe)
+│   │   ├── home.css                # Stili specifici index.html (stat-card)
+│   │   ├── chi-sono.css            # Stili specifici chi-sono.html (bio, skills)
+│   │   ├── consulenza.css          # Stili specifici consulenza.html (pmi, benefit-list)
+│   │   ├── formazione.css          # Stili specifici formazione.html (badge, quote, aree, corso-card)
+│   │   ├── scuola-futuro.css       # Stili specifici scuola-futuro.html (temi, scuola-*)
+│   │   └── contatti.css            # Stili specifici contatti.html (form, gdpr, contatti-diretti)
 │   ├── js/
 │   │   └── main.js         # Navbar, hamburger menu, fade-in animations
 │   └── images/
-│       ├── logo_mmarchetti.png
 │       ├── logo_mmarchetti_1.png
-│       ├── hero_bg.png
-│       ├── marco_profilo.png
-│       ├── marco_al_lavoro.png
-│       └── aula_formazione_workshop.png
+│       ├── web_designer_pro_v1_studio.jpg      # chi-sono.html (ritratto studio)
+│       ├── web_designer_pro_v2_workspace.jpg   # (riserva, non usata)
+│       ├── web_designer_pro_v3_urban.jpg       # (riserva, non usata)
+│       ├── web_designer_pro_v4_darkstudio.jpg  # chi-sono.html (al lavoro)
+│       ├── web_designer_pro_v5_european.jpg    # index.html (piazza)
+│       ├── web_designer_pro_v6_dramatic.jpg    # consulenza.html (ritratto)
+│       ├── consulenza_me_v1_ai_workshop.jpg    # consulenza.html (presentazione AI)
+│       ├── consulenza_me_v2_digital_transition.jpg  # (riserva, non usata)
+│       ├── consulenza_me_v3_digital_marketing.jpg   # formazione.html (marketing)
+│       ├── consulenza_me_v4_comunicazione.jpg  # formazione.html (comunicazione)
+│       ├── consulenza_me_v5_formazione.jpg     # formazione.html (AI team)
+│       ├── consulenza_v3_digital_marketing.jpg # (riserva, non usata)
+│       └── dashboard_strumenti_digitali.png    # formazione.html (dashboard)
 └── _work/                  # Documenti di lavoro (non pubblicati)
     ├── brief-immagini.html
     └── brief-immagini.pdf
@@ -40,24 +54,35 @@ mmarchetti-new/
 - HTML5 semantico (no framework)
 - CSS vanilla con variabili custom (`variables.css`)
 - JavaScript vanilla — nessuna dipendenza esterna
-- Font Google Fonts: Barlow Condensed, DM Sans, Bebas Neue
+- Font Google Fonts: Barlow Condensed, DM Sans
 - Form contatti: Formspree (`https://formspree.io/f/XXXXXXXX` — endpoint da configurare)
-- SEO: Schema.org JSON-LD, Open Graph, sitemap.xml
+- SEO: Schema.org JSON-LD, Open Graph, Twitter Card, sitemap.xml
 
 ## Convenzioni CSS
 
-Tutti gli stili sono in `assets/css/main.css`. Nessun CSS inline negli HTML.
+Ogni pagina ha il suo file CSS dedicato che viene linkato dopo `main.css`. Nessun CSS inline negli HTML.
 
-Classi utili da riusare:
-- `.stat-card`, `.stat-card--blu`, `.stat-card--arancio` — card statistiche con bordo colorato
-- `.step-number--blu/viola/magenta/arancio/faded` — numeri step colorati
-- `.benefit-list`, `.benefit-list__item`, `.benefit-list__icon` — lista con icona checkmark
+**File CSS:**
+- `reset.css` — reset base
+- `variables.css` — variabili CSS del brand
+- `main.css` — stili globali: navbar, footer, bottoni, card, sezioni, hero, animazioni
+- `home.css` — `.stat-card`, `.stat-card--blu/arancio`, `.stat-label--small`
+- `chi-sono.css` — `.bio-intro`, `.bio-paragraphs`, `.skills-list`, `.skill-tag`
+- `consulenza.css` — `.pmi-hero-stats`, `.pmi-stat`, `.pmi-highlight`, `.benefit-list`
+- `formazione.css` — `.badge`, `.badge-*`, `.quote-large`, `.quote-attr`, `.area-heading`, `.area-list`, `.corso-card`
+- `scuola-futuro.css` — `.temi-grid`, `.tema-item`, `.scuola-apertura`, `.scuola-per-chi`, `.per-chi-item`
+- `contatti.css` — form fields, `.contatti-layout`, `.gdpr-*`, `.contatto-*`
+
+**Classi utili in main.css:**
+- `.stat-card`, `.stat-card--blu`, `.stat-card--arancio` → **home.css**
+- `.step-number--blu/viola/magenta/arancio/faded` — numeri step colorati (main.css, usati in consulenza e formazione)
 - `.content-centered` — div max-width 800px centrato
-- `.quote-large`, `.quote-attr` — citazione grande con attribuzione
-- `.area-heading`, `.area-list` — heading e lista per aree tematiche
+- `.quote-large`, `.quote-attr` → **formazione.css**
+- `.area-heading`, `.area-list` → **formazione.css**
 - `.text-muted`, `.note-blu` — testo attenuato / nota con bordo sinistro blu
-- `.privacy-content`, `.privacy-heading`, `.privacy-para`, `.privacy-list` — pagina privacy
-- `.mt-sm`, `.mt-xl`, `.mb-xl` — utility margin extra (oltre .mb-sm/md/lg già esistenti)
+- `.privacy-content`, `.privacy-heading`, `.privacy-para`, `.privacy-list` — pagina privacy (in main.css)
+- `.mt-sm`, `.mt-md`, `.mt-lg`, `.mt-xl`, `.mb-sm`, `.mb-md`, `.mb-lg`, `.mb-xl` — utility margin
+- `.benefit-list`, `.benefit-list__item`, `.benefit-list__icon` → **consulenza.css**
 
 ## Colori brand
 
@@ -72,5 +97,6 @@ Classi utili da riusare:
 ## Note operative
 
 - Il form contatti usa Formspree. L'endpoint `XXXXXXXX` va sostituito con l'ID reale.
-- `sitemap.xml` e `robots.txt` usano `https://mmarchetti.it` — verificare il dominio finale.
+- `sitemap.xml` e `robots.txt` usano `https://mmarchetti.it` — ma i canonical URL negli HTML usano `https://mmarchetti.web/` — **da allineare** prima del go-live.
 - `_work/` non è pubblicato (robots.txt include `Disallow: /_work/`).
+- Le immagini marcate "(riserva, non usata)" sono fotografie alternative che non compaiono in nessun HTML ma possono essere utili per future revisioni.

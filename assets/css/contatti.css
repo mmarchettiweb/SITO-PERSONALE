@@ -1,0 +1,207 @@
+/* Stili pagina Contatti — MMarchetti */
+
+/* =====================
+   LAYOUT FORM + CONTATTI
+   ===================== */
+
+.contatti-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .contatti-layout {
+    grid-template-columns: 3fr 2fr;
+    gap: var(--space-lg);
+  }
+}
+
+/* =====================
+   FORM
+   ===================== */
+
+.form-group {
+  margin-bottom: var(--space-md);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+label {
+  display: block;
+  font-size: var(--small-size);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background-color: var(--grigio-input);
+  border: 1px solid var(--grigio-bordo);
+  border-radius: var(--radius);
+  color: var(--bianco);
+  font-size: var(--body-size);
+  transition: border-color var(--transition);
+  appearance: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--blu);
+  outline: none;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231A7FD4' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+select option {
+  background-color: #1A1A1A;
+  color: var(--bianco);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.form-submit {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* =====================
+   GDPR CHECKBOX
+   ===================== */
+
+.form-gdpr {
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.gdpr-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 400;
+}
+
+.gdpr-label input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  margin-top: 2px;
+  accent-color: var(--blu);
+  cursor: pointer;
+}
+
+.gdpr-text a {
+  color: var(--blu);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.gdpr-text a:hover {
+  color: var(--blu-hover);
+}
+
+.gdpr-required {
+  color: var(--magenta);
+  font-weight: 500;
+}
+
+/* =====================
+   CONTATTI DIRETTI
+   ===================== */
+
+.contatti-diretti {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.contatto-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+
+.contatto-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius);
+  background-color: rgba(26, 127, 212, 0.1);
+  border: 1px solid rgba(26, 127, 212, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--blu);
+}
+
+.contatto-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.contatto-label {
+  font-size: var(--small-size);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.5);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.contatto-value {
+  color: var(--bianco);
+  font-size: 15px;
+  transition: color var(--transition);
+}
+
+.contatto-value:hover {
+  color: var(--blu);
+}
+
+.contatti-heading {
+  font-size: 22px;
+}
