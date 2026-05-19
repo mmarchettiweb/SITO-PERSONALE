@@ -785,13 +785,11 @@ a.link-inline:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 300px;
 }
 
 .image-placeholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -808,11 +806,16 @@ a.link-inline:hover {
   text-align: center;
 }
 
-/* Ratio variants */
-.image-hero { aspect-ratio: var(--img-aspect-hero); }
-.image-square { aspect-ratio: var(--img-aspect-square); }
-.image-portrait { aspect-ratio: var(--img-aspect-portrait); }
-.image-wide { aspect-ratio: var(--img-aspect-wide); }
+/* Ratio variants — disabilitati per mostrare le immagini a dimensione naturale */
+/* .image-hero { aspect-ratio: var(--img-aspect-hero); } */
+/* .image-square { aspect-ratio: var(--img-aspect-square); } */
+/* .image-portrait { aspect-ratio: var(--img-aspect-portrait); } */
+/* .image-wide { aspect-ratio: var(--img-aspect-wide); } */
+
+/* Preserva aspect ratio per SVG/illustrazioni */
+.image-placeholder--clean {
+  aspect-ratio: 16 / 9;
+}
 
 /* Decorative frame around image */
 .image-frame {
