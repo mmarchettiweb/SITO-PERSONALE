@@ -87,7 +87,7 @@ select {
 }
 
 select option {
-  background-color: #1A1A1A;
+  background-color: var(--grigio-input);
   color: var(--bianco);
 }
 

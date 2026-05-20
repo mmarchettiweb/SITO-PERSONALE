@@ -165,8 +165,8 @@ a.link-inline:hover {
 }
 
 .btn-arancio:hover {
-  background-color: #e09513;
-  border-color: #e09513;
+  background-color: var(--arancio-hover);
+  border-color: var(--arancio-hover);
 }
 
 .btn-magenta {
@@ -176,8 +176,8 @@ a.link-inline:hover {
 }
 
 .btn-magenta:hover {
-  background-color: #d12d6a;
-  border-color: #d12d6a;
+  background-color: var(--magenta-hover);
+  border-color: var(--magenta-hover);
 }
 
 /* =====================
@@ -227,7 +227,7 @@ a.link-inline:hover {
   left: 0;
   right: 0;
   height: calc(100vh - var(--navbar-h));
-  background: #0A0A0A;
+  background: var(--nero);
   z-index: 999;
   padding: var(--space-lg) var(--container-padding);
   gap: var(--space-md);
@@ -1289,7 +1289,7 @@ a.link-inline:hover {
    ===================== */
 
 footer {
-  background-color: #050505;
+  background-color: var(--footer-bg);
   border-top: 1px solid var(--grigio-bordo);
   padding: var(--space-xl) 0 var(--space-lg);
 }
@@ -1382,7 +1382,7 @@ footer {
 }
 
 .footer-bottom p {
-  font-size: 13px;
+  font-size: var(--caption-size);
   color: rgba(255, 255, 255, 0.35);
 }
 
@@ -1533,7 +1533,8 @@ footer {
 .mb-lg { margin-bottom: var(--space-lg); }
 .mb-xl { margin-bottom: var(--space-xl); }
 
-.visually-hidden {
+.visually-hidden,
+.sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -1592,20 +1593,20 @@ html {
 }
 .privacy-heading {
   font-size: clamp(20px, 3vw, 28px);
-  margin-bottom: 24px;
+  margin-bottom: var(--space-md);
 }
 .privacy-para {
   color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 40px;
+  margin-bottom: var(--space-lg);
 }
 .privacy-para--sm {
   color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 16px;
+  margin-bottom: var(--space-sm);
 }
 .privacy-list {
   color: rgba(255, 255, 255, 0.75);
-  padding-left: 24px;
-  margin-bottom: 16px;
+  padding-left: var(--space-md);
+  margin-bottom: var(--space-sm);
   line-height: 1.8;
 }
 

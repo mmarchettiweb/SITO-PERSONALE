@@ -56,7 +56,7 @@
   font-family: var(--font-titoli);
   font-size: clamp(20px, 2.5vw, 24px);
   line-height: 1.5;
-  color: #FFFFFF;
+  color: var(--bianco);
   padding: var(--space-lg) var(--space-lg);
   border-left: 4px solid var(--arancio);
   background-color: var(--arancio-soft);
@@ -115,6 +115,6 @@
 }
 
 .image-placeholder--clean svg {
-  background: linear-gradient(135deg, #0A0A0A 0%, #151515 100%);
-  border-radius: 8px;
+  background: linear-gradient(135deg, var(--nero) 0%, #151515 100%);
+  border-radius: var(--radius-lg);
 }
