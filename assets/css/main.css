@@ -222,17 +222,17 @@ a.link-inline:hover {
 .navbar-nav {
   display: none;
   flex-direction: column;
-  position: fixed;
-  top: var(--navbar-h);
+  position: absolute;
+  top: 100%;
   left: 0;
   right: 0;
-  bottom: 0;
+  height: calc(100vh - var(--navbar-h));
   background: #0A0A0A;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
   z-index: 999;
   padding: var(--space-lg) var(--container-padding);
   gap: var(--space-md);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .navbar-nav.open {
@@ -292,6 +292,8 @@ a.link-inline:hover {
     background: none;
     padding: 0;
     gap: var(--space-md);
+    height: auto;
+    overflow-y: visible;
   }
 
   .navbar-nav a {

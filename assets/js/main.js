@@ -24,6 +24,16 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.style.overflow = '';
       });
     });
+
+    /* Chiude il menu se si ridimensiona a viewport desktop */
+    window.addEventListener('resize', function () {
+      if (window.innerWidth >= 768 && nav.classList.contains('open')) {
+        nav.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+    });
   }
 
   /* ---- Navbar scrolled ---- */
