@@ -65,11 +65,19 @@
   <main>
 
     <!-- Hero pagina -->
-    <section class="page-hero section-dark" aria-labelledby="page-title">
+    <section class="hero section-dark" aria-labelledby="page-title">
+      <div class="hero-bg" aria-hidden="true"></div>
       <div class="container">
-        <span class="hero-label">Chi sono</span>
-        <h1 id="page-title">Marco Marchetti.</h1>
-        <p class="hero-subtitle">Dal web design alla strategia AI: un percorso naturale nel cuore del digitale.</p>
+        <div class="hero-inner">
+          <div class="hero-text slide-up">
+            <span class="hero-label">Chi sono</span>
+            <h1 id="page-title">Marco Marchetti.</h1>
+            <p class="hero-subtitle">Dal web design alla strategia AI: un percorso naturale nel cuore del digitale.</p>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="hero-orb"></div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -186,6 +194,7 @@
     </div>
   </footer>
 
+  <div class="custom-cursor" aria-hidden="true"></div>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

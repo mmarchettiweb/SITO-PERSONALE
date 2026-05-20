@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>SEO Report — mmarchetti.it — Maggio 2026</title>
+  <style>
+    body { font-family: Arial, sans-serif; font-size: 14px; color: #111; max-width: 960px; margin: 40px auto; padding: 0 24px; line-height: 1.6; }
+    h1 { font-size: 26px; border-bottom: 3px solid #1A7FD4; padding-bottom: 8px; margin-bottom: 4px; }
+    .subtitle { color: #555; margin-bottom: 40px; }
+    h2 { font-size: 18px; margin-top: 40px; margin-bottom: 8px; background: #f0f4f8; padding: 8px 12px; border-left: 4px solid #1A7FD4; }
+    h3 { font-size: 15px; margin-top: 24px; margin-bottom: 6px; color: #1A7FD4; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 13px; }
+    th { background: #1A7FD4; color: white; padding: 8px 10px; text-align: left; }
+    td { padding: 7px 10px; border-bottom: 1px solid #e0e0e0; vertical-align: top; }
+    tr:nth-child(even) td { background: #f9f9f9; }
+    .tag-ok    { display: inline-block; background: #d4edda; color: #155724; border-radius: 4px; padding: 1px 7px; font-size: 12px; font-weight: bold; }
+    .tag-warn  { display: inline-block; background: #fff3cd; color: #856404; border-radius: 4px; padding: 1px 7px; font-size: 12px; font-weight: bold; }
+    .tag-error { display: inline-block; background: #f8d7da; color: #721c24; border-radius: 4px; padding: 1px 7px; font-size: 12px; font-weight: bold; }
+    .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+    .summary-box { border: 1px solid #ddd; border-radius: 6px; padding: 14px 16px; }
+    .summary-box h4 { margin: 0 0 8px; font-size: 14px; }
+    .summary-box.error { border-color: #f5c6cb; background: #fff5f5; }
+    .summary-box.warn  { border-color: #ffeeba; background: #fffdf0; }
+    .summary-box.ok    { border-color: #c3e6cb; background: #f5fff7; }
+    ul { margin: 6px 0; padding-left: 20px; }
+    li { margin-bottom: 4px; }
+    code { background: #f4f4f4; padding: 1px 5px; border-radius: 3px; font-size: 12px; }
+    .page-block { border: 1px solid #e0e0e0; border-radius: 6px; margin-bottom: 24px; overflow: hidden; }
+    .page-block-header { background: #1A7FD4; color: white; padding: 10px 16px; font-weight: bold; font-size: 15px; }
+    .page-block-body { padding: 14px 16px; }
+    .char-ok   { color: #155724; }
+    .char-warn { color: #856404; }
+    .char-bad  { color: #721c24; }
+    footer { margin-top: 60px; padding-top: 16px; border-top: 1px solid #ddd; color: #888; font-size: 12px; }
+  </style>
+</head>
+<body>
+
+<h1>SEO Report — mmarchetti.it</h1>
+<p class="subtitle">Audit completo · Marco Marchetti · <strong>Maggio 2026</strong> · Prodotto con Claude Code</p>
+
+<!-- RIEPILOGO ESECUTIVO -->
+<h2>Riepilogo Esecutivo</h2>
+
+<div class="summary-grid">
+  <div class="summary-box error">
+    <h4>🔴 Problemi Critici (3)</h4>
+    <ul>
+      <li>Domain mismatch: canonical vs sitemap vs robots.txt</li>
+      <li>Formspree endpoint non configurato in contatti.html</li>
+      <li>Schema.org mancante su 4 pagine</li>
+    </ul>
+  </div>
+  <div class="summary-box warn">
+    <h4>🟡 Problemi Minori (3)</h4>
+    <ul>
+      <li>14 immagini senza attributi width/height (CLS)</li>
+      <li>Meta description troppo lunga su 2 pagine</li>
+      <li>Twitter Card incoerente su privacy.html</li>
+    </ul>
+  </div>
+  <div class="summary-box ok">
+    <h4>🟢 Punti Positivi</h4>
+    <ul>
+      <li>Title tag presenti e unici su tutte le pagine</li>
+      <li>H1 unico per pagina — struttura corretta</li>
+      <li>Alt text su tutte le immagini</li>
+      <li>Open Graph completo su tutto il sito</li>
+      <li>Canonical tag su ogni pagina</li>
+      <li><code>lang="it"</code> corretto su tutti i file</li>
+      <li>noindex corretto su privacy.html</li>
+    </ul>
+  </div>
+  <div class="summary-box">
+    <h4>📊 Copertura SEO per elemento</h4>
+    <table style="margin:0">
+      <tr><td>Title tag</td><td><span class="tag-ok">7/7</span></td></tr>
+      <tr><td>Meta description</td><td><span class="tag-ok">7/7</span></td></tr>
+      <tr><td>Canonical</td><td><span class="tag-ok">7/7</span></td></tr>
+      <tr><td>Open Graph</td><td><span class="tag-ok">7/7</span></td></tr>
+      <tr><td>Twitter Card</td><td><span class="tag-ok">7/7</span></td></tr>
+      <tr><td>Schema.org JSON-LD</td><td><span class="tag-warn">3/7</span></td></tr>
+      <tr><td>H1 unico</td><td><span class="tag-ok">7/7</span></td></tr>
+      <tr><td>Alt text immagini</td><td><span class="tag-ok">100%</span></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- PROBLEMA CRITICO #1 -->
+<h2>🔴 Problema Critico #1 — Domain Mismatch</h2>
+<p>Il sito usa <strong>tre domini diversi</strong> in tre posti diversi, un errore che confonde i motori di ricerca e rischia di annullare il posizionamento:</p>
+<table>
+  <tr><th>File</th><th>Dominio usato</th><th>Stato</th></tr>
+  <tr><td>Canonical tag (tutti gli HTML)</td><td><code>https://mmarchetti.web/</code></td><td><span class="tag-error">ERRATO — dominio non reale</span></td></tr>
+  <tr><td>robots.txt (riga Sitemap:)</td><td><code>https://mmarchetti.it/</code></td><td><span class="tag-warn">Parzialmente corretto</span></td></tr>
+  <tr><td>sitemap.xml (tutti gli URL)</td><td><code>https://mmarchetti.it/</code></td><td><span class="tag-warn">Dominio reale ma non allineato agli HTML</span></td></tr>
+  <tr><td>Open Graph og:url (tutti gli HTML)</td><td><code>https://mmarchetti.web/</code></td><td><span class="tag-error">ERRATO</span></td></tr>
+</table>
+<p><strong>Azione richiesta prima del go-live:</strong> sostituire ogni occorrenza di <code>mmarchetti.web</code> con il dominio reale <code>mmarchetti.it</code> in tutti gli HTML (canonical, og:url), robots.txt e sitemap.xml. Se il dominio definitivo è diverso, usare quello.</p>
+
+<!-- PROBLEMA CRITICO #2 -->
+<h2>🔴 Problema Critico #2 — Form Contatti Non Funzionante</h2>
+<p>In <strong>contatti.html</strong>, il form usa l'endpoint Formspree con un placeholder non sostituito:</p>
+<p><code>action="https://formspree.io/f/<strong>XXXXXXXX</strong>"</code></p>
+<p><strong>Azione richiesta:</strong> registrarsi su formspree.io, creare un form per <code>mmarchetti.web@gmail.com</code> e sostituire <code>XXXXXXXX</code> con l'ID reale (es. <code>xkgzpbnw</code>).</p>
+
+<!-- ANALISI PER PAGINA -->
+<h2>Analisi per Pagina</h2>
+
+<!-- INDEX -->
+<div class="page-block">
+  <div class="page-block-header">/ — index.html (Home)</div>
+  <div class="page-block-body">
+    <table>
+      <tr><th style="width:200px">Elemento</th><th>Valore</th><th style="width:100px">Stato</th></tr>
+      <tr>
+        <td><strong>Title</strong></td>
+        <td>MMarchetti | Consulente e Formatore Digitale <small class="char-ok">(52 car.)</small></td>
+        <td><span class="tag-ok">OK</span></td>
+      </tr>
+      <tr>
+        <td><strong>Meta Description</strong></td>
+        <td>Marco Marchetti, consulente e formatore digitale specializzato in AI, strategia digitale e comunicazione. Trasformo la complessità digitale in soluzioni concrete per PMI e professionisti. <small class="char-bad">(187 car. — ideale: 150–160)</small></td>
+        <td><span class="tag-warn">LUNGA</span></td>
+      </tr>
+      <tr>
+        <td><strong>Canonical</strong></td>
+        <td><code>https://mmarchetti.web/</code></td>
+        <td><span class="tag-error">DOMINIO ✗</span></td>
+      </tr>
+      <tr>
+        <td><strong>og:image</strong></td>
+        <td>logo_mmarchetti_1.png — solo il logo, non un'immagine social dedicata</td>
+        <td><span class="tag-warn">MIGLIORABILE</span></td>
+      </tr>
+      <tr>
+        <td><strong>Schema.org</strong></td>
+        <td>@type: Person — presente con name, jobTitle, email, telephone, sameAs</td>
+        <td><span class="tag-ok">OK</span></td>
+      </tr>
+      <tr>
+        <td><strong>H1</strong></td>
+        <td>"Trasformo la complessità digitale in soluzioni concrete." (1 H1)</td>
+        <td><span class="tag-ok">OK</span></td>
+      </tr>
+      <tr>
+        <td><strong>Immagini</strong></td>
+        <td>2 immagini, alt presenti, <em>mancano width/height su 1</em></td>
+        <td><span class="tag-warn">CLS</span></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- CHI SONO -->
+<div class="page-block">
+  <div class="page-block-header">/chi-sono.html — Chi sono</div>
+  <div class="page-block-body">
+    <table>
+      <tr><th style="width:200px">Elemento</th><th>Valore</th><th style="width:100px">Stato</th></tr>
+      <tr>
+        <td><strong>Title</strong></td>
+        <td>Chi sono | MMarchetti — Marco Marchetti <small class="char-ok">(41 car.)</small></td>
+        <td><span class="tag-ok">OK</span></td>
+      </tr>
+      <tr>
+        <td><strong>Meta Description</strong></td>
+        <td>Marco Marchetti, consulente e formatore digitale. Dal web design alla strategia AI: un percorso naturale nel cuore del digitale. <small class="char-ok">(125 car.)</small></td>
+        <td><span class="tag-ok">OK</span></td>
+      </tr>
+      <tr>
+        <td><strong>Canonical</strong></td>
+        <td><code>https://mmarchetti.web/chi-sono.html</code></td>
+        <td><span class="tag-error">DOMINIO ✗</span></td>
+      </tr>
+      <tr>
+        <td><strong>Schema.org</strong></td>
+        <td>Non presente</td>
+        <td><span class="tag-error">MANCANTE</span></td>
+      </tr>
+      <tr>
+        <td><strong>H1</strong></td>
+        <td>"Marco Marchetti." (1 H1)</td>
+        <td><span class="tag-ok">OK</span></td>
+      </tr>
+      <tr>
+        <td><strong>Immagini</strong></td>
+        <td>3 immagini, alt presenti, <em>mancano width/height su 2</em></td>
+        <td><span class="tag-warn">CLS</span></td>
+      </tr>
+    </table>
+    <p><strong>Raccomandazione Schema.org:</strong> aggiungere <code>@type: Person</code> o <code>@type: AboutPage</code> con dati biogra­fici (knowsAbout, hasOccupation, alumniOf).</p>
+  </div>
+</div>
+
+<!-- CONSULENZA -->
+<div class="page-block">
+  <div class="page-block-header">/consulenza.html — Consulenza</div>
+  <div class="page-block-body">
+    <table>
+      <tr><th style="width:200px">Elemento</th><th>Valore</th><th style="width:100px">Stato</th></tr>
+      <tr>
+        <td><strong>Title</strong></td>
+        <td>Consulenza Digitale e AI per PMI | MMarchetti <small class="char-ok">(50 car.)</small></td>
+        <td><span class="tag-ok">OK</span></td>
+      </tr>
+      <tr>
+        <td><strong>Meta Description</strong></td>
+        <td>Consulenza in strategia digitale, brand identity, marketing e implementazione AI per PMI e professionisti. Soluzioni concrete per la digitalizzazione. <small class="char-ok">(145 car.)</small></td>
+        <td><span class="tag-ok">OK</span></td>
+      </tr>
+      <tr>
+        <td><strong>Canonical</strong></td>
+        <td><code>https://mmarchetti.web/consulenza.html</code></td>
+        <td><span class="tag-error">DOMINIO ✗</span></td>
+      </tr>
+      <tr>
+        <td><strong>Schema.org</strong></td>
+        <td>@type: Service — presente con name, description, provider</td>
+        <td><span class="tag-ok">OK</span></td>
+      </tr>
+      <tr>
+        <td><strong>H1</strong></td>
+        <td>"Consulenza digitale che produce risultati." (1 H1)</td>
+        <td><span class="tag-ok">OK</span></td>
+      </tr>
+      <tr>
+        <td><strong>Immagini</strong></td>
+        <td>3 immagini, alt presenti, <em>mancano width/height su 2</em></td>
+        <td><span class="tag-warn">CLS</span></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- FORMAZIONE -->
+<div class="page-block">
+  <div class="page-block-header">/formazione.html — Formazione</div>
+  <div class="page-block-body">
+    <table>
+      <tr><th style="width:200px">Elemento</th><th>Valore</th><th style="width:100px">Stato</th></tr>
+      <tr>
+        <td><strong>Title</strong></td>
+        <td>Formazione su misura | MMarchetti <small class="char-ok">(36 car.)</small></td>
+        <td><span class="tag-ok">OK</span></td>
+      </tr>
+      <tr>
+        <td><strong>Meta Description</strong></td>
+        <td>Non vendo corsi. Costruisco percorsi formativi partendo dalle aree tematiche: comunicazione digitale, marketing, AI, automazioni. Un punto di partenza su cui progettare insieme. <small class="char-bad">(177 car. — ideale: 150–160)</small></td>
+        <td><span class="tag-warn">LUNGA</span></td>
+      </tr>
+      <tr>
+        <td><strong>Canonical</strong></td>
+        <td><code>https://mmarchetti.web/formazione.html</code></td>
+        <td><span class="tag-error">DOMINIO ✗</span></td>
+      </tr>
+      <tr>
+        <td><strong>Schema.org</strong></td>
+        <td>@type: Service — presente con name, description, provider</td>
+        <td><span class="tag-ok">OK</span></td>
+      </tr>
+      <tr>
+        <td><strong>H1</strong></td>
+        <td>"Non un catalogo corsi. Un punto di partenza." (1 H1)</td>
+        <td><span class="tag-ok">OK</span></td>
+      </tr>
+      <tr>
+        <td><strong>Immagini</strong></td>
+        <td>5 immagini, alt presenti, <em>mancano width/height su 4</em></td>
+        <td><span class="tag-warn">CLS</span></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- SCUOLA -->
+<div class="page-block">
+  <div class="page-block-header">/scuola-futuro.html — Scuola &amp; Futuro</div>
+  <div class="page-block-body">
+    <table>
+      <tr><th style="width:200px">Elemento</th><th>Valore</th><th style="width:100px">Stato</th></tr>
+      <tr>
+        <td><strong>Title</strong></td>
+        <td>Digitale nelle Scuole | MMarchetti <small class="char-ok">(36 car.)</small></td>
+        <td><span class="tag-ok">OK</span></td>
+      </tr>
+      <tr>
+        <td><strong>Meta Description</strong></td>
+        <td>Portare cultura digitale, pensiero critico e consapevolezza AI nelle scuole italiane. Laboratori, incontri e percorsi PCTO per studenti e docenti. <small class="char-ok">(149 car.)</small></td>
+        <td><span class="tag-ok">OK</span></td>
+      </tr>
+      <tr>
+        <td><strong>Canonical</strong></td>
+        <td><code>https://mmarchetti.web/scuola-futuro.html</code></td>
+        <td><span class="tag-error">DOMINIO ✗</span></td>
+      </tr>
+      <tr>
+        <td><strong>Schema.org</strong></td>
+        <td>Non presente</td>
+        <td><span class="tag-error">MANCANTE</span></td>
+      </tr>
+      <tr>
+        <td><strong>H1</strong></td>
+        <td>"Il futuro si costruisce a scuola. E il digitale non può aspettare." (1 H1)</td>
+        <td><span class="tag-ok">OK</span></td>
+      </tr>
+      <tr>
+        <td><strong>Immagini</strong></td>
+        <td>SVG inline con aria-label corretto, logo con alt</td>
+        <td><span class="tag-ok">OK</span></td>
+      </tr>
+    </table>
+    <p><strong>Raccomandazione Schema.org:</strong> aggiungere <code>@type: EducationalOrganization</code> o <code>@type: Service</code> con serviceType "Educazione Digitale" e areaServed "IT".</p>
+  </div>
+</div>
+
+<!-- CONTATTI -->
+<div class="page-block">
+  <div class="page-block-header">/contatti.html — Contatti</div>
+  <div class="page-block-body">
+    <table>
+      <tr><th style="width:200px">Elemento</th><th>Valore</th><th style="width:100px">Stato</th></tr>
+      <tr>
+        <td><strong>Title</strong></td>
+        <td>Contatti | MMarchetti — Marco Marchetti <small class="char-ok">(41 car.)</small></td>
+        <td><span class="tag-ok">OK</span></td>
+      </tr>
+      <tr>
+        <td><strong>Meta Description</strong></td>
+        <td>Contatta Marco Marchetti per consulenza digitale, formazione o progetti nelle scuole. Scrivi una mail o compila il form. <small class="char-ok">(123 car.)</small></td>
+        <td><span class="tag-ok">OK</span></td>
+      </tr>
+      <tr>
+        <td><strong>Canonical</strong></td>
+        <td><code>https://mmarchetti.web/contatti.html</code></td>
+        <td><span class="tag-error">DOMINIO ✗</span></td>
+      </tr>
+      <tr>
+        <td><strong>Schema.org</strong></td>
+        <td>Non presente</td>
+        <td><span class="tag-error">MANCANTE</span></td>
+      </tr>
+      <tr>
+        <td><strong>Form Contatti</strong></td>
+        <td>Formspree endpoint: <code>XXXXXXXX</code> non configurato</td>
+        <td><span class="tag-error">NON FUNZ.</span></td>
+      </tr>
+    </table>
+    <p><strong>Raccomandazione Schema.org:</strong> aggiungere <code>@type: ContactPage</code> con il riferimento a <code>@type: Person</code> (Marco Marchetti) e i contatti diretti (email, LinkedIn).</p>
+  </div>
+</div>
+
+<!-- PRIVACY -->
+<div class="page-block">
+  <div class="page-block-header">/privacy.html — Privacy Policy</div>
+  <div class="page-block-body">
+    <table>
+      <tr><th style="width:200px">Elemento</th><th>Valore</th><th style="width:100px">Stato</th></tr>
+      <tr>
+        <td><strong>Title</strong></td>
+        <td>Privacy Policy | MMarchetti — Marco Marchetti <small class="char-ok">(46 car.)</small></td>
+        <td><span class="tag-ok">OK</span></td>
+      </tr>
+      <tr>
+        <td><strong>Meta Description</strong></td>
+        <td>Informativa sulla privacy ai sensi del Regolamento UE 2016/679 (GDPR). Titolare del trattamento: Marco Marchetti. <small class="char-ok">(120 car.)</small></td>
+        <td><span class="tag-ok">OK</span></td>
+      </tr>
+      <tr>
+        <td><strong>Robots</strong></td>
+        <td><code>noindex, follow</code> — corretto per pagine legali</td>
+        <td><span class="tag-ok">OK</span></td>
+      </tr>
+      <tr>
+        <td><strong>Twitter Card type</strong></td>
+        <td><code>summary</code> (tutte le altre pagine usano <code>summary_large_image</code>)</td>
+        <td><span class="tag-warn">INCOERENTE</span></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- ROBOTS E SITEMAP -->
+<h2>robots.txt &amp; sitemap.xml</h2>
+<table>
+  <tr><th>File</th><th>Dettaglio</th><th>Stato</th></tr>
+  <tr>
+    <td><strong>robots.txt</strong></td>
+    <td>Allow: / — Disallow: /_work/ — corretto<br>Riga <code>Sitemap:</code> punta a <code>https://mmarchetti.it/sitemap.xml</code></td>
+    <td><span class="tag-warn">DOMINIO OK MA diverso dai canonical</span></td>
+  </tr>
+  <tr>
+    <td><strong>sitemap.xml</strong></td>
+    <td>7 URL con dominio <code>mmarchetti.it</code> — priorità ben assegnate (1.0 home, 0.9 consulenza/formazione, 0.8 chi-sono/scuola, 0.7 contatti, 0.3 privacy)</td>
+    <td><span class="tag-warn">DOMINIO ≠ canonical HTML</span></td>
+  </tr>
+</table>
+
+<!-- OG:IMAGE -->
+<h2>Open Graph — og:image</h2>
+<p>Tutte le pagine usano il <strong>logo</strong> (<code>logo_mmarchetti_1.png</code>) come immagine social. È funzionale ma non ottimale: quando un link viene condiviso su LinkedIn, Facebook o WhatsApp, comparirà solo il logo su sfondo bianco invece di un'immagine evocativa.</p>
+<p><strong>Raccomandazione:</strong> creare un'immagine social dedicata (1200×630 px) con foto, nome e claim principale. Usarla come <code>og:image</code> globale, oppure immagini diverse per pagina.</p>
+
+<!-- PRIORITÀ DI INTERVENTO -->
+<h2>Priorità di Intervento — Checklist Go-Live</h2>
+<table>
+  <tr><th>#</th><th>Azione</th><th>File coinvolti</th><th>Priorità</th></tr>
+  <tr>
+    <td>1</td>
+    <td>Sostituire <code>mmarchetti.web</code> con il dominio reale in canonical e og:url</td>
+    <td>Tutti gli HTML (7 file)</td>
+    <td><span class="tag-error">BLOCCANTE</span></td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Allineare robots.txt e sitemap.xml allo stesso dominio definitivo</td>
+    <td>robots.txt, sitemap.xml</td>
+    <td><span class="tag-error">BLOCCANTE</span></td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Configurare Formspree con endpoint reale</td>
+    <td>contatti.html</td>
+    <td><span class="tag-error">BLOCCANTE</span></td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Accorciare meta description index.html (187 → max 160 car.) e formazione.html (177 → max 160 car.)</td>
+    <td>index.html, formazione.html</td>
+    <td><span class="tag-warn">ALTA</span></td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Aggiungere Schema.org a chi-sono.html, scuola-futuro.html, contatti.html</td>
+    <td>3 file HTML</td>
+    <td><span class="tag-warn">ALTA</span></td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>Aggiungere width/height a tutte le immagini di contenuto (migliora CLS)</td>
+    <td>Tutti gli HTML</td>
+    <td><span class="tag-warn">MEDIA</span></td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>Creare og:image social dedicata 1200×630 px</td>
+    <td>Tutti gli HTML</td>
+    <td><span class="tag-warn">MEDIA</span></td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>Allineare Twitter Card di privacy.html a <code>summary_large_image</code></td>
+    <td>privacy.html</td>
+    <td><span class="tag-ok">BASSA</span></td>
+  </tr>
+</table>
+
+<footer>
+  <p>Report generato in data Maggio 2026 con analisi manuale del codice sorgente. Non sostituisce un audit tecnico con Screaming Frog, Search Console o Lighthouse.</p>
+</footer>
+
+</body>
+</html>

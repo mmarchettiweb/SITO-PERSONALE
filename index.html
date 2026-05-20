@@ -92,14 +92,20 @@
 
     <!-- Hero -->
     <section class="hero section-dark">
+      <div class="hero-bg" aria-hidden="true"></div>
       <div class="container">
-        <div class="hero-content fade-in">
-          <span class="hero-label">Marco Marchetti — Consulente e Formatore Digitale</span>
-          <h1>Trasformo la complessità digitale in <span>soluzioni concrete.</span></h1>
-          <p class="hero-subtitle">Sono Marco Marchetti. Lavoro con aziende e professionisti per costruire strategie digitali che funzionano davvero — dall'identità di brand all'ecosistema AI, dalla formazione alla comunicazione.</p>
-          <div class="hero-cta">
-            <a href="consulenza.html" class="btn btn-primary" aria-label="Scopri i servizi di consulenza">Scopri i servizi</a>
-            <a href="contatti.html" class="btn btn-secondary" aria-label="Contattami per parlare del tuo progetto">Parliamo</a>
+        <div class="hero-inner">
+          <div class="hero-text slide-up">
+            <span class="hero-label">Marco Marchetti — Consulente e Formatore Digitale</span>
+            <h1 class="typewriter">Trasformo la complessità digitale in <span>soluzioni concrete.</span></h1>
+            <p class="hero-subtitle">Lavoro con aziende e professionisti per costruire strategie digitali che funzionano davvero — dall'identità di brand all'ecosistema AI, dalla formazione alla comunicazione.</p>
+            <div class="hero-cta">
+              <a href="consulenza.html" class="btn btn-primary" aria-label="Scopri i servizi di consulenza">Scopri i servizi</a>
+              <a href="contatti.html" class="btn btn-secondary" aria-label="Contattami per parlare del tuo progetto">Parliamo</a>
+            </div>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="hero-orb"></div>
           </div>
         </div>
       </div>
@@ -126,17 +132,6 @@
             </div>
           </div>
         </div>
-        
-        <div class="stats-grid fade-in mt-xl">
-          <div class="stat-card stat-card--blu">
-            <div class="stat-number blu">15+</div>
-            <div class="stat-label--small">Anni nel digitale</div>
-          </div>
-          <div class="stat-card stat-card--arancio">
-            <div class="stat-number arancio">PMI</div>
-            <div class="stat-label--small">Aziende, professionisti, scuole</div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -147,11 +142,10 @@
           <h2 id="servizi-title">Cosa faccio.</h2>
           <p>Quattro aree di lavoro, un unico obiettivo: aiutarti a crescere con metodo.</p>
         </div>
-        <div class="cards-grid cards-grid-4">
+        <div class="cards-grid cards-grid-asymmetric">
 
-          <article class="card fade-in">
+          <article class="card card-large slide-up delay-1">
             <div class="card-icon" aria-hidden="true">
-              <!-- Icona briefcase -->
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
                 <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path>
@@ -163,22 +157,8 @@
             <a href="consulenza.html" class="card-link" aria-label="Scopri la consulenza digitale">Scopri di più</a>
           </article>
 
-          <article class="card card-arancio fade-in">
+          <article class="card card-large slide-up delay-2">
             <div class="card-icon" aria-hidden="true">
-              <!-- Icona graduation cap -->
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-              </svg>
-            </div>
-            <h3>Formazione</h3>
-            <p>Percorsi formativi su comunicazione digitale, marketing e AI per privati, professionisti ed enti.</p>
-            <a href="formazione.html" class="card-link" aria-label="Scopri i percorsi formativi">Scopri di più</a>
-          </article>
-
-          <article class="card card-magenta fade-in">
-            <div class="card-icon" aria-hidden="true">
-              <!-- Icona cpu -->
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
                 <rect x="9" y="9" width="6" height="6"></rect>
@@ -197,9 +177,20 @@
             <a href="consulenza.html" class="card-link" aria-label="Scopri i servizi di ecosistema AI">Scopri di più</a>
           </article>
 
-          <article class="card card-viola fade-in">
+          <article class="card card-compact slide-up delay-3">
             <div class="card-icon" aria-hidden="true">
-              <!-- Icona book-open -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+              </svg>
+            </div>
+            <h3>Formazione</h3>
+            <p>Percorsi formativi su comunicazione digitale, marketing e AI per privati, professionisti ed enti.</p>
+            <a href="formazione.html" class="card-link" aria-label="Scopri i percorsi formativi">Scopri di più</a>
+          </article>
+
+          <article class="card card-compact slide-up delay-4">
+            <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
                 <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
@@ -220,21 +211,49 @@
         <div class="section-header fade-in">
           <h2 id="approccio-title">Un approccio diverso.</h2>
         </div>
-        <div class="claims-grid">
+        <div class="claims-alternate">
 
-          <div class="claim-item fade-in">
-            <h3>Evoluzione, non rivoluzione</h3>
-            <p>Il digitale cambia in continuazione. Io ci sono cresciuto dentro — e so come aiutarti a stare al passo senza stravolgere tutto.</p>
+          <div class="claim-row slide-up">
+            <div class="claim-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="32" cy="32" r="28"/>
+                <path d="M20 32l8 8 16-16"/>
+                <path d="M32 10v6M32 48v6M10 32h6M48 32h6"/>
+              </svg>
+            </div>
+            <div class="claim-body">
+              <h3>Evoluzione, non rivoluzione</h3>
+              <p>Il digitale cambia in continuazione. Io ci sono cresciuto dentro — e so come aiutarti a stare al passo senza stravolgere tutto.</p>
+            </div>
           </div>
 
-          <div class="claim-item fade-in">
-            <h3>Soluzioni, non teorie</h3>
-            <p>Non vendo strategie astratte. Lavoro con te per costruire qualcosa che funziona nel tuo contesto specifico.</p>
+          <div class="claim-row claim-row--reverse slide-up">
+            <div class="claim-body">
+              <h3>Soluzioni, non teorie</h3>
+              <p>Non vendo strategie astratte. Lavoro con te per costruire qualcosa che funziona nel tuo contesto specifico.</p>
+            </div>
+            <div class="claim-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20h40v32H12z"/>
+                <path d="M20 20V14a12 12 0 0 1 24 0v6"/>
+                <circle cx="32" cy="38" r="4"/>
+                <path d="M32 42v6"/>
+              </svg>
+            </div>
           </div>
 
-          <div class="claim-item fade-in">
-            <h3>Persone prima della tecnologia</h3>
-            <p>Ogni strumento, ogni automazione, ogni processo — ha senso solo se le persone sanno usarlo e ci credono.</p>
+          <div class="claim-row slide-up">
+            <div class="claim-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="32" cy="22" r="12"/>
+                <path d="M14 54c0-10 8-18 18-18s18 8 18 18"/>
+                <path d="M32 34v6"/>
+              </svg>
+            </div>
+            <div class="claim-body">
+              <h3>Persone prima della tecnologia</h3>
+              <p>Ogni strumento, ogni automazione, ogni processo — ha senso solo se le persone sanno usarlo e ci credono.</p>
+            </div>
           </div>
 
         </div>
@@ -287,6 +306,7 @@
     </div>
   </footer>
 
+  <div class="custom-cursor" aria-hidden="true"></div>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

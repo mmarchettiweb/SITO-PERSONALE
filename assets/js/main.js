@@ -61,9 +61,9 @@ document.addEventListener('DOMContentLoaded', function () {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  /* ---- Fade-in con Intersection Observer ---- */
-  const fadeEls = document.querySelectorAll('.fade-in');
-  if (fadeEls.length && 'IntersectionObserver' in window) {
+  /* ---- Intersection Observer — fade-in + slide-up ---- */
+  const animatedEls = document.querySelectorAll('.fade-in, .slide-up');
+  if (animatedEls.length && 'IntersectionObserver' in window) {
     const observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -71,15 +71,82 @@ document.addEventListener('DOMContentLoaded', function () {
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-    fadeEls.forEach(function (el) {
+    animatedEls.forEach(function (el) {
       observer.observe(el);
     });
   } else {
-    /* Fallback per browser senza supporto */
-    fadeEls.forEach(function (el) {
+    animatedEls.forEach(function (el) {
       el.classList.add('visible');
+    });
+  }
+
+  /* ---- Typewriter effect (solo su desktop) ---- */
+  const typewriterEl = document.querySelector('.typewriter');
+  if (typewriterEl && window.innerWidth >= 768) {
+    const originalHTML = typewriterEl.innerHTML;
+    const plainText = typewriterEl.textContent;
+    typewriterEl.innerHTML = '';
+    typewriterEl.style.borderRight = '3px solid var(--blu)';
+
+    const textSpan = document.createElement('span');
+    typewriterEl.appendChild(textSpan);
+
+    let i = 0;
+    const speed = 32;
+
+    function typeWriter() {
+      if (i < plainText.length) {
+        textSpan.textContent = plainText.substring(0, i + 1);
+        i++;
+        setTimeout(typeWriter, speed);
+      } else {
+        typewriterEl.innerHTML = originalHTML;
+        typewriterEl.style.animation = 'blink-caret 0.75s step-end infinite';
+      }
+    }
+
+    setTimeout(typeWriter, 400);
+  }
+
+  /* ---- Cursore personalizzato ---- */
+  const cursor = document.querySelector('.custom-cursor');
+  if (cursor && window.matchMedia('(pointer: fine)').matches) {
+    let mouseX = -100, mouseY = -100;
+    let cursorX = -100, cursorY = -100;
+
+    document.addEventListener('mousemove', function (e) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      if (!cursor.classList.contains('active')) {
+        cursor.classList.add('active');
+      }
+    });
+
+    document.addEventListener('mouseleave', function () {
+      cursor.classList.remove('active');
+    });
+
+    function animateCursor() {
+      const lag = 0.15;
+      cursorX += (mouseX - cursorX) * lag;
+      cursorY += (mouseY - cursorY) * lag;
+      cursor.style.left = cursorX + 'px';
+      cursor.style.top = cursorY + 'px';
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    /* Hover su link, bottoni, card */
+    const hoverTargets = document.querySelectorAll('a, button, .btn, .card, .navbar-hamburger');
+    hoverTargets.forEach(function (el) {
+      el.addEventListener('mouseenter', function () {
+        cursor.classList.add('cursor-hover');
+      });
+      el.addEventListener('mouseleave', function () {
+        cursor.classList.remove('cursor-hover');
+      });
     });
   }
 
