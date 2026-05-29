@@ -2,6 +2,26 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+  /* ---- Cookie banner ---- */
+  var cookieBanner = document.getElementById('cookie-banner');
+  if (cookieBanner) {
+    if (!localStorage.getItem('cookie-choice')) {
+      cookieBanner.classList.remove('cookie-hidden');
+    }
+    function closeCookieBanner(choice) {
+      cookieBanner.classList.add('cookie-hidden');
+      localStorage.setItem('cookie-choice', choice);
+    }
+    var cookieAccept = document.getElementById('cookie-ok-btn');
+    if (cookieAccept) {
+      cookieAccept.addEventListener('click', function () { closeCookieBanner('accept'); });
+    }
+    var cookieDecline = document.getElementById('cookie-decline-btn');
+    if (cookieDecline) {
+      cookieDecline.addEventListener('click', function () { closeCookieBanner('decline'); });
+    }
+  }
+
   /* ---- Hamburger menu ---- */
   const hamburger = document.querySelector('.navbar-hamburger');
   const nav = document.querySelector('.navbar-nav');

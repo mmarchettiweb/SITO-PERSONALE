@@ -1,0 +1,134 @@
+/* Stili pagina 404 — MMarchetti */
+
+/* =====================
+   HERO 404
+   ===================== */
+
+.error-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.error-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  width: 100%;
+}
+
+.error-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.error-code {
+  display: block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(100px, 16vw, 180px);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -4px;
+  background: linear-gradient(135deg, var(--blu) 0%, var(--magenta) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-md);
+  user-select: none;
+}
+
+.error-content .hero-label {
+  margin-bottom: var(--space-sm);
+}
+
+.error-content h1 {
+  margin-bottom: var(--space-md);
+}
+
+.error-actions {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-top: var(--space-lg);
+}
+
+/* =====================
+   LINK RAPIDI
+   ===================== */
+
+.error-links-section {
+  padding-top: 0;
+}
+
+.error-links-label {
+  font-size: var(--small-size);
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--space-md);
+}
+
+.error-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-sm);
+}
+
+.error-link-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--space-md);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.error-link-card:hover {
+  background: rgba(26, 127, 212, 0.08);
+  border-color: rgba(26, 127, 212, 0.3);
+}
+
+.error-link-card__title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.error-link-card__desc {
+  font-size: var(--caption-size);
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.4;
+}
+
+/* =====================
+   RESPONSIVE
+   ===================== */
+
+@media (max-width: 768px) {
+  .error-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .error-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .error-links {
+    grid-template-columns: 1fr;
+  }
+
+  .error-actions {
+    flex-direction: column;
+  }
+
+  .error-actions .btn {
+    text-align: center;
+  }
+}
