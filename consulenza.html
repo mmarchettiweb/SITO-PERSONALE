@@ -39,13 +39,71 @@
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Consulenza Digitale e AI",
-    "description": "Consulenza in strategia digitale, brand identity, marketing e implementazione AI per PMI e professionisti",
+    "@id": "https://mmarchetti.it/consulenza.html#service",
+    "name": "Consulenza Digitale e AI per PMI",
+    "description": "Consulenza in strategia digitale, brand identity, marketing e implementazione AI per PMI italiane e professionisti. Percorso in 5 fasi: assessment digitale, strategia, implementazione, formazione del team e monitoraggio.",
+    "serviceType": ["Consulenza Digitale", "Consulenza AI", "Trasformazione Digitale PMI"],
+    "areaServed": {
+      "@type": "Country",
+      "name": "Italia"
+    },
     "provider": {
       "@type": "Person",
+      "@id": "https://mmarchetti.it/#marco-marchetti",
       "name": "Marco Marchetti",
-      "url": "https://mmarchetti.web"
+      "url": "https://mmarchetti.it"
+    },
+    "url": "https://mmarchetti.it/consulenza.html",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Aree di consulenza",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Comunicazione e Brand Identity"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Strategia Marketing Digitale"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Strategia e Implementazione AI"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Ecosistema AI Aziendale"}}
+      ]
     }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Come funziona il percorso di consulenza digitale?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Il percorso di consulenza digitale segue 5 fasi: Assessment Digitale (analisi di processi, strumenti e competenze del team), Strategia (piano d'azione con priorità e obiettivi misurabili), Implementazione (scelta e configurazione degli strumenti), Formazione del Team (sessioni pratiche e supporto continuativo) e Monitoraggio (misurazione dei risultati e ottimizzazione). Ogni fase si adatta al contesto specifico dell'azienda."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "A chi si rivolge la consulenza digitale di Marco Marchetti?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La consulenza si rivolge principalmente a PMI italiane con team da 5 a 50 persone che vogliono evolvere digitalmente, e a professionisti che vogliono fare un salto di qualità nel proprio mercato. Marco Marchetti lavora con aziende di ogni settore: dal commercio all'artigianato, dai servizi alla produzione."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quali risultati produce la consulenza digitale per PMI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "I risultati concreti includono: processi più veloci e meno errori, team più autonomo con gli strumenti digitali, decisioni basate su dati anziché su intuizioni, e supporto nell'accesso a fondi pubblici per la digitalizzazione come PNRR e voucher digitalizzazione."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "È possibile accedere a finanziamenti pubblici per la digitalizzazione delle PMI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sì. Nell'ambito dei percorsi di consulenza vengono valutate le opportunità di finanziamento disponibili per le PMI italiane, inclusi fondi PNRR e voucher digitalizzazione."
+        }
+      }
+    ]
   }
   </script>
 </head>
@@ -310,6 +368,29 @@
         <div class="intro-text fade-in">
           <p>Lavoro principalmente con <strong>PMI che vogliono evolvere digitalmente</strong> senza perdere di vista il business reale, e con professionisti che vogliono fare il salto di qualità nel loro mercato.</p>
           <p class="mt-md">Se hai un team da 5 a 50 persone, processi che funzionano ma potrebbero funzionare meglio, e la sensazione che la tecnologia possa aiutarti ma non sai da dove partire — sei nel posto giusto.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-accent" aria-labelledby="faq-consulenza-title">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2 id="faq-consulenza-title">Domande frequenti.</h2>
+        </div>
+        <div class="claims-grid fade-in">
+          <div class="claim-item">
+            <h3>Come funziona il percorso?</h3>
+            <p>Cinque fasi: Assessment Digitale, Strategia, Implementazione, Formazione del Team e Monitoraggio. Ogni fase si adatta al tuo contesto specifico — non esiste un percorso uguale a un altro.</p>
+          </div>
+          <div class="claim-item magenta">
+            <h3>A chi si rivolge?</h3>
+            <p>Principalmente a PMI con team da 5 a 50 persone, in qualsiasi settore. Lavoro con aziende che vogliono migliorare senza stravolgere tutto quello che già funziona.</p>
+          </div>
+          <div class="claim-item viola">
+            <h3>Posso accedere a fondi pubblici?</h3>
+            <p>Sì. Nei percorsi di consulenza valutiamo insieme le opportunità disponibili: PNRR, voucher digitalizzazione e altri strumenti per le PMI italiane.</p>
+          </div>
         </div>
       </div>
     </section>

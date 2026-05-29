@@ -39,13 +39,71 @@
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Formazione su misura",
-    "description": "Percorsi formativi costruiti insieme su comunicazione digitale, marketing, intelligenza artificiale e automazioni.",
+    "@id": "https://mmarchetti.it/formazione.html#service",
+    "name": "Formazione Digitale su misura",
+    "description": "Percorsi formativi costruiti sul contesto specifico del cliente su comunicazione digitale, marketing digitale, intelligenza artificiale applicata e automazioni. Rivolto a professionisti, team aziendali ed enti formativi.",
+    "serviceType": ["Formazione Digitale", "Formazione AI", "Percorsi Formativi su misura"],
+    "areaServed": {
+      "@type": "Country",
+      "name": "Italia"
+    },
     "provider": {
       "@type": "Person",
+      "@id": "https://mmarchetti.it/#marco-marchetti",
       "name": "Marco Marchetti",
-      "url": "https://mmarchetti.web"
+      "url": "https://mmarchetti.it"
+    },
+    "url": "https://mmarchetti.it/formazione.html",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Aree tematiche formazione",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Course", "name": "Comunicazione Digitale", "description": "Strategia di contenuti, gestione dei canali digitali, storytelling e presenza professionale online"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Course", "name": "Marketing Digitale", "description": "Fondamenti del marketing digitale, SEO, analytics, campagne pubblicitarie e automation marketing"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Course", "name": "Intelligenza Artificiale Applicata", "description": "Prompt engineering, strumenti AI per testi e dati, workflow con assistenti AI, etica e consapevolezza"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Course", "name": "Automazioni e Produttività", "description": "Workflow e mappatura dei processi, strumenti di produttività, automazioni no-code e low-code"}}
+      ]
     }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Come si costruisce un percorso formativo su misura?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Si parte da una conversazione sul contesto: situazione attuale, obiettivi concreti, strumenti già in uso. Solo dopo si definisce il programma — aree tematiche, numero di incontri, modalità di lavoro. Nessun corso esce da un cassetto: ogni percorso nasce dalla specifica realtà del partecipante o del team."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quanto dura un percorso formativo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dipende dal contesto. Un intervento mirato può essere anche solo 2-3 incontri. Un percorso aziendale strutturato può estendersi su settimane, con follow-up per verificare i risultati concreti nel lavoro quotidiano."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "È possibile erogare percorsi formativi nell'ambito di programmi finanziati?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sì. Marco Marchetti collabora con enti formativi per l'erogazione di percorsi nell'ambito di programmi finanziati e GOL (Garanzia di Occupabilità dei Lavoratori)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "In cosa si differenziano questi percorsi da un corso standard?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non esistono corsi preconfezionati. Ogni percorso nasce dalla situazione specifica del partecipante o del team. Il focus è sul lavoro pratico, su strumenti immediatamente utilizzabili e sulla misurabilità dei risultati — non sul numero di ore certificate o sui contenuti teorici."
+        }
+      }
+    ]
   }
   </script>
 </head>
@@ -290,6 +348,29 @@
             <h3>Enti Formativi</h3>
             <p>Collaboro con enti, scuole e associazioni per l'erogazione di percorsi in ambito digitale, anche nell'ambito di programmi finanziati e GOL.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-accent" aria-labelledby="faq-formazione-title">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2 id="faq-formazione-title">Domande frequenti.</h2>
+        </div>
+        <div class="claims-grid fade-in">
+          <div class="claim-item">
+            <h3>Come nasce un percorso su misura?</h3>
+            <p>Da una conversazione: contesto attuale, obiettivi concreti, strumenti già in uso. Solo dopo si definisce il programma. Nessun corso esce da un cassetto.</p>
+          </div>
+          <div class="claim-item arancio">
+            <h3>Quanto dura?</h3>
+            <p>Dipende dal contesto. Un intervento mirato può essere 2-3 incontri. Un percorso aziendale strutturato si estende su settimane, con follow-up per verificare i risultati.</p>
+          </div>
+          <div class="claim-item magenta">
+            <h3>Si possono usare programmi finanziati?</h3>
+            <p>Sì. Collaboro con enti formativi per percorsi nell'ambito di programmi finanziati e GOL (Garanzia di Occupabilità dei Lavoratori).</p>
+          </div>
         </div>
       </div>
     </section>

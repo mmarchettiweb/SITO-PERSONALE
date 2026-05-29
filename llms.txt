@@ -1,0 +1,44 @@
+# Marco Marchetti — Consulente e Formatore Digitale
+
+> Marco Marchetti è un consulente e formatore digitale specializzato in strategia digitale, intelligenza artificiale applicata e comunicazione. Aiuta PMI italiane e professionisti a digitalizzare i processi e a integrare l'AI nel lavoro quotidiano. Opera anche nelle scuole con percorsi di educazione digitale per studenti e docenti.
+
+## Informazioni sull'entità
+
+- **Nome**: Marco Marchetti
+- **Ruolo**: Consulente e Formatore Digitale
+- **Sito web**: https://mmarchetti.it
+- **Email**: mmarchetti.web@gmail.com
+- **Telefono**: +39 342 695 1496
+- **LinkedIn**: https://www.linkedin.com/in/marco-marchetti-a929b1320
+- **P.IVA**: IT02900680303
+
+## Competenze principali
+
+Strategia digitale, brand identity, marketing digitale, consulenza AI, automazioni aziendali, ecosistemi AI, formazione digitale, comunicazione digitale, UX e web design, digitalizzazione PMI
+
+## Servizi
+
+- [Consulenza Digitale e AI per PMI](https://mmarchetti.it/consulenza.html): Percorso in 5 fasi (assessment, strategia, implementazione, formazione del team, monitoraggio) per PMI che vogliono digitalizzare i processi. Include consulenza su brand identity, marketing digitale, implementazione AI ed ecosistemi AI aziendali. Target: PMI con team da 5 a 50 persone, settori commercio, artigianato, servizi e produzione.
+
+- [Formazione su misura](https://mmarchetti.it/formazione.html): Percorsi formativi costruiti sul contesto specifico del cliente. Aree tematiche: comunicazione digitale, marketing digitale, intelligenza artificiale applicata, automazioni e produttività. Rivolto a professionisti, team aziendali ed enti formativi (inclusi programmi finanziati e GOL).
+
+- [Scuola & Futuro — Digitale nelle Scuole](https://mmarchetti.it/scuola-futuro.html): Laboratori, incontri e percorsi PCTO per studenti e docenti su pensiero critico digitale, sicurezza online, fake news, intelligenza artificiale, identità digitale e cittadinanza digitale. Rivolto a scuole medie e superiori, docenti e dirigenti scolastici.
+
+## Pagine principali
+
+- [Home](https://mmarchetti.it/): Presentazione generale dei servizi e dell'approccio
+- [Chi sono](https://mmarchetti.it/chi-sono.html): Biografia professionale, percorso e metodo di lavoro
+- [Consulenza](https://mmarchetti.it/consulenza.html): Dettaglio dei servizi di consulenza digitale e AI
+- [Formazione](https://mmarchetti.it/formazione.html): Aree tematiche e metodo della formazione su misura
+- [Scuola & Futuro](https://mmarchetti.it/scuola-futuro.html): Programma di educazione digitale per le scuole
+- [Contatti](https://mmarchetti.it/contatti.html): Form di contatto, email e telefono
+
+## Chi è Marco Marchetti
+
+Marco Marchetti ha costruito la sua esperienza partendo dal web design e dalla UX, passando poi alla comunicazione digitale, al marketing e alla strategia. Specializzato nell'integrazione dell'intelligenza artificiale nei processi aziendali, affianca PMI e professionisti dalla diagnosi digitale all'implementazione concreta degli strumenti. Ha studiato scienze umane, il che gli permette di portare il digitale nelle organizzazioni — e nelle scuole — con un approccio centrato sulle persone, non sulla tecnologia fine a se stessa.
+
+## Approccio
+
+- Evoluzione, non rivoluzione: percorsi sostenibili adattati al contesto esistente
+- Soluzioni concrete, non strategie astratte: ogni intervento parte dalla situazione reale
+- Persone prima della tecnologia: strumenti e automazioni hanno senso solo se le persone li adottano davvero
