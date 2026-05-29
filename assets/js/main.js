@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   /* ---- Cookie banner ---- */
-  var cookieBanner = document.getElementById('cookie-banner');
+  const cookieBanner = document.getElementById('cookie-banner');
   if (cookieBanner) {
     if (!localStorage.getItem('cookie-choice')) {
       cookieBanner.classList.remove('cookie-hidden');
@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', function () {
       cookieBanner.classList.add('cookie-hidden');
       localStorage.setItem('cookie-choice', choice);
     }
-    var cookieAccept = document.getElementById('cookie-ok-btn');
+    const cookieAccept = document.getElementById('cookie-ok-btn');
     if (cookieAccept) {
       cookieAccept.addEventListener('click', function () { closeCookieBanner('accept'); });
     }
-    var cookieDecline = document.getElementById('cookie-decline-btn');
+    const cookieDecline = document.getElementById('cookie-decline-btn');
     if (cookieDecline) {
       cookieDecline.addEventListener('click', function () { closeCookieBanner('decline'); });
     }
@@ -105,29 +105,62 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ---- Typewriter effect (solo su desktop) ---- */
   const typewriterEl = document.querySelector('.typewriter');
   if (typewriterEl && window.innerWidth >= 768) {
-    const originalHTML = typewriterEl.innerHTML;
-    const plainText = typewriterEl.textContent;
-    typewriterEl.innerHTML = '';
-    typewriterEl.style.borderRight = '3px solid var(--blu)';
-
-    const textSpan = document.createElement('span');
-    typewriterEl.appendChild(textSpan);
-
-    let i = 0;
-    const speed = 32;
-
-    function typeWriter() {
-      if (i < plainText.length) {
-        textSpan.textContent = plainText.substring(0, i + 1);
-        i++;
-        setTimeout(typeWriter, speed);
-      } else {
-        typewriterEl.innerHTML = originalHTML;
-        typewriterEl.style.animation = 'blink-caret 0.75s step-end infinite';
+    /*
+     * Raccoglie i segmenti di testo preservando i nodi elemento (es. <span>),
+     * così lo stile del markup viene applicato durante la digitazione stessa
+     * e non solo a fine animazione.
+     */
+    const segments = [];
+    typewriterEl.childNodes.forEach(function (node) {
+      if (node.nodeType === Node.TEXT_NODE) {
+        segments.push({ text: node.textContent, tag: null });
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        segments.push({ text: node.textContent, tag: node.cloneNode(false) });
       }
+    });
+
+    typewriterEl.innerHTML = '';
+    typewriterEl.classList.add('typewriter--typing');
+
+    let segIdx = 0;
+    let charIdx = 0;
+    let currentNode = null;
+
+    function typeNext() {
+      if (segIdx >= segments.length) {
+        typewriterEl.classList.remove('typewriter--typing');
+        typewriterEl.classList.add('typewriter--done');
+        return;
+      }
+
+      const seg = segments[segIdx];
+
+      /* All'inizio di ogni segmento crea il nodo contenitore */
+      if (charIdx === 0) {
+        if (seg.tag) {
+          const wrapper = seg.tag.cloneNode(false);
+          typewriterEl.appendChild(wrapper);
+          currentNode = document.createTextNode('');
+          wrapper.appendChild(currentNode);
+        } else {
+          currentNode = document.createTextNode('');
+          typewriterEl.appendChild(currentNode);
+        }
+      }
+
+      currentNode.textContent += seg.text[charIdx];
+      charIdx++;
+
+      if (charIdx >= seg.text.length) {
+        segIdx++;
+        charIdx = 0;
+        currentNode = null;
+      }
+
+      setTimeout(typeNext, 32);
     }
 
-    setTimeout(typeWriter, 400);
+    setTimeout(typeNext, 400);
   }
 
   /* ---- Cursore personalizzato ---- */

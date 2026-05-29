@@ -35,8 +35,6 @@
   /* Font */
   --font-titoli: 'Barlow Condensed', sans-serif;
   --font-body: 'DM Sans', sans-serif;
-  --font-logo: 'Bebas Neue', sans-serif;
-
   /* Tipografia */
   --h1-size: 56px;
   --h2-size: 40px;
@@ -54,10 +52,6 @@
   --h4-lh: 1.4;
   --body-lh: 1.7;
   --large-lh: 1.6;
-
-  /* Numeri grandi / stats */
-  --stat-size: 72px;
-  --stat-lh: 1.0;
 
   /* Spaziature */
   --space-xs: 8px;
